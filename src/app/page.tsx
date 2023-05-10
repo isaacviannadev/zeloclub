@@ -1,4 +1,4 @@
-import Countdown from './components/countdown';
+import Countdown from './components/contador';
 import Logo from './components/logo';
 
 export default function Home() {
