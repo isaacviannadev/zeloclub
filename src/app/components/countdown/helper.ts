@@ -1,4 +1,4 @@
-interface getTimeReturn {
+interface GetTimeReturn {
   days: number;
   hours: string;
   minutes: string;
@@ -6,7 +6,7 @@ interface getTimeReturn {
   isExpired: boolean;
 }
 
-export function getTime(date: string): getTimeReturn {
+export function getTime(date: string): GetTimeReturn {
   const targetDate = new Date(date).getTime();
   const now = new Date().getTime();
   const timeDifference = targetDate - now;
