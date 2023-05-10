@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import Modal from '../modal';
+import Modal from '../modal-ui';
 
 export default function Logo() {
   const [easterEggOpen, setEasterEggOpen] = useState(false);

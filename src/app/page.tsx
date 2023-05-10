@@ -1,5 +1,5 @@
 import Countdown from './components/contador';
-import Logo from './components/logo';
+import Logo from './components/zeloclub-logo';
 
 export default function Home() {
   return (
