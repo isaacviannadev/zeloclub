@@ -1,5 +1,6 @@
 'use client';
 import { useEffect, useState } from 'react';
+import Skeleton from '../skeleton';
 
 type CountdownProps = {
   date: string;
@@ -19,6 +20,8 @@ export default function Countdown({ date }: CountdownProps) {
     minutes: '00',
     seconds: '00',
   });
+  const [isExpired, setIsExpired] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const intervalId = setInterval(() => {
@@ -28,6 +31,7 @@ export default function Countdown({ date }: CountdownProps) {
 
       if (timeDifference <= 0) {
         clearInterval(intervalId);
+        setIsExpired(true);
       } else {
         const days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
 
@@ -44,11 +48,16 @@ export default function Countdown({ date }: CountdownProps) {
         ).toLocaleString('en-US', { minimumIntegerDigits: 2 });
 
         setTimeLeft({ days, hours, minutes, seconds });
+        setIsLoading(false);
       }
     }, 1000);
 
     return () => clearInterval(intervalId);
   }, [date]);
+
+  if (isExpired) return null;
+
+  if (isLoading) return <Skeleton height={84} width={430} />;
 
   return (
     <div className='flex justify-center items-center w-full'>
