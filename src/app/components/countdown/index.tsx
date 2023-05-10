@@ -61,11 +61,11 @@ export default function Countdown({ date }: CountdownProps) {
 
   return (
     <div className='flex justify-center items-center w-full'>
-      <div className='flex flex-col md:flex-row bg-transparent border-2 border-gray-700 p-4 rounded-lg shadow-xl gap-4 backdrop-filter backdrop-blur-sm'>
-        <span className='text-center text-gray-700 text-5xl font-bold'>
+      <div className='flex flex-col md:flex-row bg-gray-200 border-2 border-gray-700 p-2 md:p-4 rounded-lg shadow-xl gap-4 '>
+        <span className='text-center text-gray-700 text-7xl font-bold'>
           {timeLeft.days} dias
         </span>
-        <span className='text-center text-gray-700 text-5xl font-bold '>
+        <span className='text-center text-gray-700 text-7xl font-bold '>
           {timeLeft.hours}:{timeLeft.minutes}:{timeLeft.seconds}
         </span>
       </div>

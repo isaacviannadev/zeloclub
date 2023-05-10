@@ -12,6 +12,12 @@
   src: url('../assets/fonts/roxborough-cf-bold.ttf');
 }
 
+@font-face {
+  font-family: 'Alice';
+  src: url('../assets/fonts/Alice-Regular.ttf');
+  font-weight: 400;
+}
+
 body {
   color: var(--text-color);
   background: var(--bg-main-color) url('../assets/patterns/pattern-bg.svg')
@@ -23,4 +29,9 @@ h1,
 h2,
 h3 {
   font-family: Roxborough, sans-serif;
+}
+
+p,
+span {
+  font-family: Alice, sans-serif;
 }
