@@ -41,7 +41,7 @@ export default function Modal({
       />
       <div className='flex items-center justify-center relative z-1 p-5 bg-white border border-zinc-400 w-fit min-w-full md:min-w-[42rem] h-fit rounded-lg'>
         <div
-          className='flex items-center justify-center absolute right-0 -top-8 w-6 h-6 text-[#2e2e2e] border border-zinc-500 rounded-full md:hover:bg-slate-300 transition-all bg-white cursor-pointer'
+          className='flex items-center justify-center absolute right-1 md:right-0 top-1 md:-top-8 w-6 h-6 text-[#2e2e2e] border border-zinc-500 rounded-full md:hover:bg-slate-300 transition-all bg-white cursor-pointer'
           onClick={handleOverlayClick}
         >
           <Image src={CloseIcon} alt='close' width={16} height={16} />
