@@ -27,7 +27,7 @@ export default function Contact() {
                   height='1891.82'
                   transform='rotate(45.1709 867.996 856.414)'
                   stroke='#2A2A2Ae7'
-                  stroke-width='2'
+                  strokeWidth='2'
                 />
                 <rect
                   x='868.119'
@@ -36,7 +36,7 @@ export default function Contact() {
                   height='1891.82'
                   transform='rotate(45.1709 868.119 414.414)'
                   stroke='#2A2A2Ae7'
-                  stroke-width='2'
+                  strokeWidth='2'
                 />
                 <rect
                   x='868.119'
@@ -45,7 +45,7 @@ export default function Contact() {
                   height='1891.82'
                   transform='rotate(45.1709 868.119 -27.5858)'
                   stroke='#2A2A2Ae7'
-                  stroke-width='2'
+                  strokeWidth='2'
                 />
                 <rect
                   x='867.996'
@@ -54,7 +54,7 @@ export default function Contact() {
                   height='1891.82'
                   transform='rotate(45.1709 867.996 -469.586)'
                   stroke='#2A2A2Ae7'
-                  stroke-width='2'
+                  strokeWidth='2'
                 />
               </svg>
             </div>
