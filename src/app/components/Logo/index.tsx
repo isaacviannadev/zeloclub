@@ -6,20 +6,16 @@ import Modal from '../Modal';
 export default function Logo() {
   const [easterEggOpen, setEasterEggOpen] = useState(false);
 
-  function handleEasterEggClick() {
-    setEasterEggOpen((old) => !old);
-  }
-
   return (
     <>
       <h1
         className='text-7xl font-bold md:text-9xl select-none'
-        onClick={() => setEasterEggOpen((old) => !old)}
+        onClick={() => setEasterEggOpen(true)}
       >
         zeloclub
       </h1>
 
-      <Modal isOpen={easterEggOpen} onClose={handleEasterEggClick}>
+      <Modal isOpen={easterEggOpen} onClose={() => setEasterEggOpen(false)}>
         <div className='flex flex-col items-center justify-center gap-4 text-center'>
           <h2 className='text-6xl font-bold'>zeloclub</h2>
           <p className='text-xl'>em breve!</p>

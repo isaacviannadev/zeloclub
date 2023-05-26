@@ -1,6 +1,6 @@
 'use client';
 import Image from 'next/image';
-import { ReactNode } from 'react';
+import { ReactNode, useEffect } from 'react';
 import CloseIcon from './icons/x-thin.svg';
 
 type ModalProps = {
@@ -17,7 +17,7 @@ export default function Modal({
   isOpen = false,
   onClose,
   children,
-}: ModalProps): JSX.Element | null {
+}: ModalProps) {
   if (!isOpen) return null;
 
   const handleOverlayClick = () => {
@@ -25,6 +25,7 @@ export default function Modal({
   };
 
   const handleKeyPress = (event: KeyboardEvent) => {
+    console.log(event.key, 'key');
     if (event.key === 'Escape') {
       onClose();
     }
@@ -33,7 +34,7 @@ export default function Modal({
   return (
     <div
       className='flex items-center justify-center fixed inset-0 p-5'
-      onKeyDown={handleKeyPress}
+      onKeyDown={(e) => handleKeyPress(e)}
     >
       <div
         className='w-screen h-screen bg-gray-500 absolute -z-[1] bg-opacity-25'
