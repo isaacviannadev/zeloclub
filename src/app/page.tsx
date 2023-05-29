@@ -246,7 +246,6 @@ export default function Home() {
                     <div className='relative'>
                       <img
                         src='https://cdn.glitch.global/366c06b6-90d2-4995-9a79-d42af2d6b7c2/cuidador-de-idosos-3b-850x560.jpg?v=1685398591426'
-                        // src='https://images.unsplash.com/photo-1626668011660-051379e9b211?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80'
                         alt=''
                         className='aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg'
                       />
@@ -264,7 +263,7 @@ export default function Home() {
                     </div>
                     <div className='relative'>
                       <img
-                        src='https://casaderepousomoradaprimavera.com/wp-content/uploads/2020/02/Dia-Nacional-do-Cuidador-de-Idosos-morada.jpg.webp'
+                        src='https://images.unsplash.com/photo-1626668011660-051379e9b211?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80'
                         alt=''
                         className='aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg'
                       />
@@ -274,7 +273,8 @@ export default function Home() {
                   <div className='w-44 flex-none space-y-8 pt-32 sm:pt-0'>
                     <div className='relative'>
                       <img
-                        src='https://cdn.folhape.com.br/img/c/800/600/dn_arquivo/2021/08/29095571713-eb20065354-b_1.jpg'
+                        src='https://casaderepousomoradaprimavera.com/wp-content/uploads/2020/02/Dia-Nacional-do-Cuidador-de-Idosos-morada.jpg.webp'
+                        // src='https://cdn.folhape.com.br/img/c/800/600/dn_arquivo/2021/08/29095571713-eb20065354-b_1.jpg'
                         // src='https://plus.unsplash.com/premium_photo-1663100381304-2d2bbef0551b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80'
                         alt=''
                         className='aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg'
