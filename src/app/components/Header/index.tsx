@@ -4,7 +4,6 @@ import { useState } from 'react';
 
 import { Dialog } from '@headlessui/react';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
-import Image from 'next/image';
 
 const navigation = [
   { name: 'Sobre', href: '#' },
@@ -27,7 +26,7 @@ function Header() {
             <h1 className='text-4xl'>zeloclub</h1>
           </a>
         </div>
-        <div className='flex lg:hidden'>
+        {/* <div className='flex lg:hidden'>
           <button
             type='button'
             className='-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700'
@@ -36,7 +35,7 @@ function Header() {
             <span className='sr-only'>Open main menu</span>
             <Bars3Icon className='h-6 w-6' aria-hidden='true' />
           </button>
-        </div>
+        </div> */}
         <div className='hidden lg:flex lg:gap-x-12'>
           {/* {navigation.map((item) => (
             <a
@@ -48,10 +47,10 @@ function Header() {
             </a>
           ))} */}
         </div>
-        <div className='hidden lg:flex lg:flex-1 lg:justify-end'>
-          {/* <a href='#' className='font-semibold leading-6 text-gray-900'>
-            Log in <span aria-hidden='true'>&rarr;</span>
-          </a> */}
+        <div className=' lg:flex lg:flex-1 lg:justify-end'>
+          <a href='#contact' className='font-semibold leading-6 text-gray-900'>
+            Registrar <span aria-hidden='true'>&rarr;</span>
+          </a>
         </div>
       </nav>
       <Dialog
@@ -95,10 +94,10 @@ function Header() {
               </div>
               <div className='py-6'>
                 <a
-                  href='#'
+                  href='#contact'
                   className='-mx-3 block rounded-lg px-3 py-2.5 text-lg font-semibold leading-7 text-gray-900 hover:bg-gray-50'
                 >
-                  Log in
+                  Registrar
                 </a>
               </div>
             </div>
