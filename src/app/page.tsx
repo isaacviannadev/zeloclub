@@ -245,7 +245,8 @@ export default function Home() {
                   <div className='ml-auto w-44 flex-none space-y-8 pt-32 sm:ml-0 sm:pt-80 lg:order-last lg:pt-36 xl:order-none xl:pt-80'>
                     <div className='relative'>
                       <img
-                        src='https://images.unsplash.com/photo-1626668011660-051379e9b211?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80'
+                        src='https://cdn.glitch.global/366c06b6-90d2-4995-9a79-d42af2d6b7c2/cuidador-de-idosos-3b-850x560.jpg?v=1685398591426'
+                        // src='https://images.unsplash.com/photo-1626668011660-051379e9b211?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80'
                         alt=''
                         className='aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg'
                       />
@@ -273,7 +274,8 @@ export default function Home() {
                   <div className='w-44 flex-none space-y-8 pt-32 sm:pt-0'>
                     <div className='relative'>
                       <img
-                        src='https://plus.unsplash.com/premium_photo-1663100381304-2d2bbef0551b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80'
+                        src='https://cdn.folhape.com.br/img/c/800/600/dn_arquivo/2021/08/29095571713-eb20065354-b_1.jpg'
+                        // src='https://plus.unsplash.com/premium_photo-1663100381304-2d2bbef0551b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80'
                         alt=''
                         className='aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg'
                       />
@@ -366,11 +368,11 @@ export default function Home() {
         </div>
 
         {/* Image section */}
-        <div className='mt-32 sm:mt-40 xl:mx-auto xl:max-w-7xl xl:px-8'>
+        <div className='mt-32 sm:mt-40 xl:mx-auto xl:max-w-7xl xl:px-8 '>
           <img
-            src='https://media.istockphoto.com/id/905890434/pt/foto/close-up-of-excited-pensioners.jpg?s=2048x2048&w=is&k=20&c=pliCxC18RtQPechmFNK6rt90xM9Foz62wcdSI6J18Tg='
+            src='https://cdn.glitch.global/366c06b6-90d2-4995-9a79-d42af2d6b7c2/grupo-de-idosos-aposentados-felizes-usando-um-dispositivo-digital_53876-155564.jpg?v=1685399281755'
             alt=''
-            className='aspect-[5/2] w-full object-cover xl:rounded-3xl'
+            className='aspect-[5/2] w-full object-cover object-top xl:rounded-3xl'
           />
         </div>
 
