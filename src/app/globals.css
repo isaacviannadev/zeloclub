@@ -8,6 +8,10 @@
   --bg-main-color: #abedd8;
 }
 
+* {
+  scroll-behavior: smooth;
+}
+
 @font-face {
   font-family: 'Roxborough';
   src: url('../assets/fonts/roxborough-cf-bold.ttf');

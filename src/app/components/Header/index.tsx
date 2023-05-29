@@ -63,7 +63,7 @@ function Header() {
         <Dialog.Panel className='fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10'>
           <div className='flex items-center justify-between'>
             <a href='#' className='-m-1.5 p-1.5'>
-              <span className='sr-only'>Your Company</span>
+              <span className='sr-only'>zeloclub</span>
               <img
                 className='h-10 w-auto'
                 src='https://cdn.glitch.global/366c06b6-90d2-4995-9a79-d42af2d6b7c2/zc-favicon.png?v=1685107525308'
@@ -95,7 +95,7 @@ function Header() {
               <div className='py-6'>
                 <a
                   href='#contact'
-                  className='-mx-3 block rounded-lg px-3 py-2.5 text-lg font-semibold leading-7 text-gray-900 hover:bg-gray-50'
+                  className='-mx-3 block rounded-lg px-3 py-2.5 text-lg font-semibold leading-7 text-gray-900 hover:bg-gray-50 '
                 >
                   Registrar
                 </a>

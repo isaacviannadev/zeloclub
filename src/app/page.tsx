@@ -1,5 +1,4 @@
 /* eslint-disable @next/next/no-img-element */
-
 import Contact from './components/Contact';
 import Header from './components/Header';
 import { IconProps } from './types/types';
@@ -156,7 +155,7 @@ const footerNavigation = {
 
 export default function Home() {
   return (
-    <div className='bg-white'>
+    <div className='bg-white '>
       <Header />
 
       <main className='isolate'>
