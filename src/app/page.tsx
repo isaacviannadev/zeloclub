@@ -369,9 +369,9 @@ export default function Home() {
         {/* Image section */}
         <div className='mt-32 sm:mt-40 xl:mx-auto xl:max-w-7xl xl:px-8 '>
           <img
-            src='https://cdn.glitch.global/366c06b6-90d2-4995-9a79-d42af2d6b7c2/grupo-de-idosos-aposentados-felizes-usando-um-dispositivo-digital_53876-155564.jpg?v=1685399281755'
+            src='https://cdn.glitch.global/366c06b6-90d2-4995-9a79-d42af2d6b7c2/af241533-8f23-4997-80f6-78ad1b0d4957.image.png?v=1685403765970'
             alt=''
-            className='aspect-[5/2] w-full object-cover object-top xl:rounded-3xl'
+            className='aspect-[5/2] w-full object-cover  xl:rounded-3xl'
           />
         </div>
 
