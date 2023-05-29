@@ -5,40 +5,30 @@ import Header from './components/Header';
 import { IconProps } from './types/types';
 
 const stats = [
-  { label: 'Transactions every 24 hours', value: '44 million' },
-  { label: 'Assets under holding', value: '$119 trillion' },
-  { label: 'New users annually', value: '46,000' },
+  { label: 'População idosa no Brasil', value: '31,2 milhões' },
+  // { label: 'Assets under holding', value: '$119 trillion' },
+  { label: 'Profissionais cuidadores', value: '35.000' },
 ];
 const values = [
   {
-    name: 'Be world-class',
+    name: 'Conexão',
     description:
-      'Aut illo quae. Ut et harum ea animi natus. Culpa maiores et sed sint et magnam exercitationem quia. Ullam voluptas nihil vitae dicta molestiae et. Aliquid velit porro vero.',
+      'O zeloclub oferece uma plataforma intuitiva que facilita a busca por cuidadores qualificados e a contratação dos serviços desejados. Com alguns cliques, você pode encontrar o profissional certo e agendar horários convenientes para atender às necessidades do seu ente querido.',
   },
   {
-    name: 'Share everything you know',
+    name: 'Respeito',
     description:
-      'Mollitia delectus a omnis. Quae velit aliquid. Qui nulla maxime adipisci illo id molestiae. Cumque cum ut minus rerum architecto magnam consequatur. Quia quaerat minima.',
+      'Entendemos a importância da compatibilidade entre o cuidador e o idoso. Com base nas necessidades e preferências específicas, nosso algoritmo inteligente faz a combinação ideal para garantir uma relação de confiança e harmonia. Afinal, relacionamentos saudáveis ​​são essenciais para um cuidado eficiente e afetuoso.',
   },
   {
-    name: 'Always learning',
+    name: 'Comunicação',
     description:
-      'Aut repellendus et officiis dolor possimus. Deserunt velit quasi sunt fuga error labore quia ipsum. Commodi autem voluptatem nam. Quos voluptatem totam.',
+      'Acreditamos na importância da comunicação contínua e transparente entre cuidadores, idosos e familiares. Por meio de nossa plataforma, você pode acompanhar o progresso, receber atualizações em tempo real e compartilhar informações relevantes, garantindo que todos estejam sempre conectados.',
   },
   {
-    name: 'Be supportive',
+    name: 'Qualidade',
     description:
-      'Magnam provident veritatis odit. Vitae eligendi repellat non. Eum fugit impedit veritatis ducimus. Non qui aspernatur laudantium modi. Praesentium rerum error deserunt harum.',
-  },
-  {
-    name: 'Take responsibility',
-    description:
-      'Sit minus expedita quam in ullam molestiae dignissimos in harum. Tenetur dolorem iure. Non nesciunt dolorem veniam necessitatibus laboriosam voluptas perspiciatis error.',
-  },
-  {
-    name: 'Enjoy downtime',
-    description:
-      'Ipsa in earum deserunt aut. Quos minus aut animi et soluta. Ipsum dicta ut quia eius. Possimus reprehenderit iste aspernatur ut est velit consequatur distinctio.',
+      'Selecionamos cuidadosamente uma equipe de profissionais altamente capacitados, comprometidos em oferecer cuidados personalizados e atenciosos aos idosos. Nossos cuidadores são treinados para lidar com diversas necessidades, proporcionando conforto e segurança em cada interação.',
   },
 ];
 const team = [
@@ -46,25 +36,29 @@ const team = [
     name: 'Isaac Vianna',
     role: 'Co-Founder / CEO',
     imageUrl:
-      'https://cdn.glitch.global/366c06b6-90d2-4995-9a79-d42af2d6b7c2/isaac.jpeg?v=1685040006159',
+      'https://cdn.glitch.global/366c06b6-90d2-4995-9a79-d42af2d6b7c2/88c30d3a-6a81-46c1-aa6c-7edb7b55fd3d.image.png?v=1685381621762',
+    linkedinUrl: 'https://www.linkedin.com/in/isaacvianna/',
   },
   {
     name: 'Matheus Gomes',
     role: 'Co-Founder / CTO',
     imageUrl:
       'https://cdn.glitch.global/366c06b6-90d2-4995-9a79-d42af2d6b7c2/1558462200456.jpeg?v=1685039578065',
+    linkedinUrl: 'https://www.linkedin.com/in/matheusgomesweb/',
   },
   {
     name: 'Guilherme Chagas',
     role: 'Co-Founder / COO',
     imageUrl:
-      'https://cdn.glitch.global/366c06b6-90d2-4995-9a79-d42af2d6b7c2/gui2.jpeg?v=1685039833402',
+      'https://cdn.glitch.global/366c06b6-90d2-4995-9a79-d42af2d6b7c2/163cf573-ddd5-478c-b0fd-ca4cf26871de.image.png?v=1685381667463',
+    linkedinUrl: 'https://www.linkedin.com/in/guilherme-chagas-/',
   },
   {
     name: 'Clóvis Júnior',
     role: 'Co-Founder / CMO',
     imageUrl:
       'https://cdn.glitch.global/366c06b6-90d2-4995-9a79-d42af2d6b7c2/eu-cj.jpg?v=1685054026986',
+    linkedinUrl: 'https://www.linkedin.com/in/clovisjunior/',
   },
   // More people...
 ];
@@ -169,7 +163,7 @@ export default function Home() {
         {/* Hero section */}
         <div className='relative isolate -z-10'>
           <svg
-            className='absolute inset-x-0 top-0 -z-10 h-[64rem] w-full stroke-gray-200 [mask-image:radial-gradient(32rem_32rem_at_center,white,transparent)] opacity-40'
+            className='absolute inset-x-0 top-0 -z-10 h-[64rem] w-full stroke-gray-200 bg-[#ABEDD8] opacity-20'
             aria-hidden='true'
             width='1728'
             height='1117'
@@ -183,7 +177,7 @@ export default function Home() {
               width='1891.82'
               height='1891.82'
               transform='rotate(45.1709 867.996 856.414)'
-              stroke='#2A2A2Ae7'
+              stroke='#2a2a2a43'
               strokeWidth='2'
             />
             <rect
@@ -192,7 +186,7 @@ export default function Home() {
               width='1891.82'
               height='1891.82'
               transform='rotate(45.1709 868.119 414.414)'
-              stroke='#2A2A2Ae7'
+              stroke='#2a2a2a43'
               strokeWidth='2'
             />
             <rect
@@ -201,7 +195,7 @@ export default function Home() {
               width='1891.82'
               height='1891.82'
               transform='rotate(45.1709 868.119 -27.5858)'
-              stroke='#2A2A2Ae7'
+              stroke='#2a2a2a43'
               strokeWidth='2'
             />
             <rect
@@ -210,7 +204,7 @@ export default function Home() {
               width='1891.82'
               height='1891.82'
               transform='rotate(45.1709 867.996 -469.586)'
-              stroke='#2A2A2Ae7'
+              stroke='#2a2a2a43'
               strokeWidth='2'
             />
           </svg>
@@ -220,7 +214,7 @@ export default function Home() {
             aria-hidden='true'
           >
             <div
-              className='aspect-[801/1036] w-[40.0625rem] bg-gradient-to-tr from-[#ABEDD8] to-[#c7f57d] opacity-30'
+              className='aspect-[801/1036] w-[40.0625rem] bg-[#ABEDD8] '
               style={{
                 clipPath:
                   'polygon(63.1% 29.5%, 100% 17.1%, 76.6% 3%, 48.4% 0%, 44.6% 4.7%, 54.5% 25.3%, 59.8% 49%, 55.2% 57.8%, 44.4% 57.2%, 27.8% 47.9%, 35.1% 81.5%, 0% 97.7%, 39.2% 100%, 35.2% 81.4%, 97.2% 52.8%, 63.1% 29.5%)',
@@ -236,12 +230,15 @@ export default function Home() {
                     Conectando corações, cuidando de vidas.
                   </h1>
                   <p className='relative mt-6 text-lg leading-8 text-gray-600 sm:max-w-md lg:max-w-none'>
-                    A <strong className='zc-text-main-color'>zeloclub</strong>{' '}
-                    nasceu para facilitar a conexão entre pessoas que buscam
-                    serviços de cuidados para idosos, com segurança e carinho.
-                    Valorizamos as pessoas e profissionais dessa categoria,
-                    oferecendo tranquilidade às empresas e famílias que precisam
-                    de cuidado especializado para seus entes queridos.
+                    O <strong className='text-black'>zeloclub</strong> é o
+                    aplicativo perfeito para conectar cuidadores de idosos com
+                    famílias que procuram assistência confiável. Nossa
+                    plataforma intuitiva e segura facilita o encontro de
+                    cuidadores qualificados, proporcionando um envelhecimento
+                    saudável e feliz para seus entes queridos. Experimente o{' '}
+                    <strong className='text-black'> zeloclub</strong> hoje e
+                    descubra a tranquilidade que vem com o cuidado
+                    especializado.
                   </p>
                 </div>
                 <div className='mt-14 flex justify-end gap-8 sm:-mt-44 sm:justify-start sm:pl-20 lg:mt-0 lg:pl-0'>
@@ -306,32 +303,44 @@ export default function Home() {
             <div className='mt-6 flex flex-col gap-x-8 gap-y-20 lg:flex-row'>
               <div className='lg:w-full lg:max-w-2xl lg:flex-auto'>
                 <p className='text-xl leading-8 text-gray-600'>
-                  O propósito do aplicativo{' '}
-                  <strong className='zc-text-main-color'>zeloclub</strong> é
-                  oferecer um serviço de cuidados de alta qualidade e confiável
-                  para idosos. O aplicativo visa facilitar a busca por
-                  profissionais qualificados e disponíveis para prestarem
-                  cuidados, além de fornecer uma plataforma segura para a
-                  comunicação entre usuários e profissionais e para o
-                  agendamento de compromissos.
+                  Nossa missão no{' '}
+                  <strong className='text-black'>zeloclub</strong> é ser a ponte
+                  que conecta cuidadores de idosos dedicados a famílias em busca
+                  de assistência de qualidade. Somos um serviço de
+                  intermediação, focado em facilitar o encontro entre
+                  profissionais especializados e aqueles que necessitam de
+                  cuidados personalizados para seus entes queridos.
                 </p>
                 <div className='mt-10 max-w-xl text-base leading-7 text-gray-700'>
                   <p>
-                    Queremos ajudar as pessoas a cuidar de seus entes queridos
-                    de forma segura e eficiente, oferecendo uma solução
-                    conveniente e confiável para as necessidades de cuidados de
-                    pessoas. Além disso, o aplicativo visa ser uma plataforma
-                    inclusiva e acessível, oferecendo serviços de qualidade a um
-                    preço acessível.
+                    Acreditamos que cada idoso merece receber cuidados amorosos
+                    e respeitosos, e buscamos garantir que essas necessidades
+                    sejam atendidas de forma eficiente e confiável. No entanto,
+                    é importante destacar que não somos prestadores diretos de
+                    cuidados aos idosos. Em vez disso, oferecemos uma plataforma
+                    intuitiva e segura que permite que famílias encontrem
+                    cuidadores qualificados que se encaixem perfeitamente em
+                    suas necessidades.
+                    <br />
+                    Ao escolher o{' '}
+                    <strong className='text-black'>zeloclub</strong>, você terá
+                    acesso a um clube de profissionais altamente capacitados,
+                    com experiência comprovada e um compromisso genuíno em
+                    oferecer cuidado de excelência.
                   </p>
                   <p className='mt-10'>
-                    Chegamos para aumentar a visibilidade dessa categoria de
-                    profissionais fornecendo segurança e diminuindo as
-                    incertezas relacionadas à informalidade. E para auxiliar de
-                    forma segura e eficaz, fornecendo a tranquilidade de um
-                    atendimento profissional e especializado às empresas e
-                    famílias que precisam tanto de suporte para seus entes
-                    queridos.
+                    Nossa plataforma simplifica o processo de busca, seleção e
+                    contratação de cuidadores, garantindo que você encontre a
+                    pessoa certa para cuidar do seu ente querido.
+                    <br />
+                    No <strong className='text-black'>zeloclub</strong>,
+                    acreditamos que o cuidado com os idosos vai além do simples
+                    serviço - é uma expressão de amor e dedicação.
+                    <br />
+                    Estamos comprometidos em ajudar você a encontrar cuidadores
+                    comprometidos e qualificados, para que seus entes queridos
+                    recebam o apoio necessário e desfrutem de uma vida mais
+                    feliz e saudável.
                   </p>
                 </div>
               </div>
@@ -372,8 +381,9 @@ export default function Home() {
               Nossos valores
             </h2>
             <p className='mt-6 text-lg leading-8 text-gray-600'>
-              Lorem ipsum dolor sit amet consect adipisicing elit. Possimus
-              magnam voluptatum cupiditate veritatis in accusamus quisquam.
+              Nossos valores são a base de tudo o que fazemos. Eles definem a
+              forma como trabalhamos e se relacionamos com nossos clientes,
+              parceiros e colegas.
             </p>
           </div>
           <dl className='mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 text-base leading-7 sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:grid-cols-3'>
@@ -387,7 +397,7 @@ export default function Home() {
         </div>
 
         {/* Team section */}
-        <div className='mx-auto mt-32 max-w-7xl px-6 sm:mt-48 lg:px-8 mb-32'>
+        <div className='mx-auto mt-32 max-w-7xl px-6 sm:mt-48 lg:px-8 mb-32 '>
           <div className='mx-auto max-w-2xl lg:mx-0'>
             <h2 className='text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl'>
               Nosso time
@@ -400,12 +410,12 @@ export default function Home() {
           </div>
           <ul
             role='list'
-            className='mx-auto mt-20 grid max-w-2xl grid-cols-2 gap-x-8 gap-y-16 text-center sm:grid-cols-3 md:grid-cols-4 lg:mx-0 lg:max-w-none lg:grid-cols-5 xl:grid-cols-6'
+            className='mx-auto mt-20 grid max-w-2xl grid-cols-2 gap-x-8 gap-y-16 text-center sm:grid-cols-3 md:grid-cols-4 lg:mx-0 lg:max-w-none lg:grid-cols-4 xl:grid-cols-4'
           >
             {team.map((person) => (
               <li key={person.name}>
                 <img
-                  className='mx-auto h-24 w-24 rounded-full'
+                  className='mx-auto h-24 w-24 rounded-full border-2 border-[#ABEDD8]'
                   src={person.imageUrl}
                   alt=''
                 />
@@ -417,11 +427,12 @@ export default function Home() {
             ))}
           </ul>
         </div>
+
         {/* Contact section */}
         <Contact />
 
         {/* Blog section */}
-        <div className='mx-auto mt-32 max-w-7xl px-6 sm:mt-40 lg:px-8'>
+        {/* <div className='mx-auto mt-32 max-w-7xl px-6 sm:mt-40 lg:px-8'>
           <div className='mx-auto max-w-2xl lg:mx-0 lg:max-w-none'>
             <h2 className='text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl'>
               From the blog
@@ -474,12 +485,12 @@ export default function Home() {
               </article>
             ))}
           </div>
-        </div>
+        </div> */}
       </main>
 
       {/* Footer */}
-      <footer className='mx-auto mt-40 max-w-7xl overflow-hidden px-6 pb-20 sm:mt-64 sm:pb-24 lg:px-8'>
-        <nav
+      <footer className='mx-auto mt-10 max-w-7xl overflow-hidden px-6 pb-20 sm:mt-24 sm:pb-24 lg:px-8'>
+        {/* <nav
           className='-mb-6 columns-2 sm:flex sm:justify-center sm:space-x-12'
           aria-label='Footer'
         >
@@ -493,9 +504,9 @@ export default function Home() {
               </a>
             </div>
           ))}
-        </nav>
-        <div className='mt-10 flex justify-center space-x-10'>
-          {footerNavigation.social.map((item) => (
+        </nav> */}
+        <div className=' flex justify-center space-10'>
+          {/* {footerNavigation.social.map((item) => (
             <a
               key={item.name}
               href={item.href}
@@ -504,7 +515,12 @@ export default function Home() {
               <span className='sr-only'>{item.name}</span>
               <item.icon className='h-6 w-6' aria-hidden='true' />
             </a>
-          ))}
+          ))} */}
+          <img
+            src='https://cdn.glitch.global/366c06b6-90d2-4995-9a79-d42af2d6b7c2/zc-favicon.png?v=1685107525308'
+            alt='Zelo'
+            className='h-12 w-auto'
+          />
         </div>
         <p className='mt-10 text-center text-xs leading-5 text-gray-500'>
           &copy; 2023 zeloclub, ltda. Todos os direitos reservados.

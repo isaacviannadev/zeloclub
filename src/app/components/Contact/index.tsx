@@ -1,8 +1,5 @@
-import {
-  BuildingOffice2Icon,
-  EnvelopeIcon,
-  PhoneIcon,
-} from '@heroicons/react/24/outline';
+import { EnvelopeIcon } from '@heroicons/react/24/outline';
+import OptionGroup from '../OptionGroup';
 
 export default function Contact() {
   return (
@@ -10,9 +7,9 @@ export default function Contact() {
       <div className='mx-auto grid max-w-7xl grid-cols-1 lg:grid-cols-2'>
         <div className='relative px-6 pb-20 pt-24 sm:pt-32 lg:static lg:px-8 lg:py-48'>
           <div className='mx-auto max-w-xl lg:mx-0 lg:max-w-lg'>
-            <div className='absolute inset-y-0 left-0 -z-10 w-full overflow-hidden bg-[#ABEDD8] bg-opacity-40 ring-1 ring-gray-900/10 lg:w-1/2'>
+            <div className='absolute inset-y-0 left-0 -z-10 w-full overflow-hidden bg-gradient-to-l from-white to-[#abedd86d]  lg:w-1/2'>
               <svg
-                className='absolute inset-0 h-full w-full stroke-gray-200 [mask-image:radial-gradient(100%_100%_at_top_right,white,transparent)] opacity-40'
+                className='absolute inset-0 h-full object-cover opacity-10'
                 aria-hidden='true'
                 width='1728'
                 height='1117'
@@ -59,48 +56,23 @@ export default function Contact() {
               </svg>
             </div>
             <h2 className='text-3xl font-bold tracking-tight text-gray-900'>
-              Get in touch
+              Cadastre-se na lista de espera
             </h2>
-            <p className='mt-6 text-lg leading-8 text-gray-600'>
-              Proin volutpat consequat porttitor cras nullam gravida at. Orci
-              molestie a eu arcu. Sed ut tincidunt integer elementum id sem.
-              Arcu sed malesuada et magna.
+            <p className='mt-6 text-lg leading-6 text-gray-600'>
+              Se você é um cuidador dedicado e experiente, gostaríamos de
+              conhecê-lo. Preencha o formulário ao lado para se cadastrar em
+              nossa plataforma e começar a fazer a diferença na vida dos idosos.
+              <br />
+              <br />
+              Se você está em busca de cuidadores qualificados para seus entes
+              queridos, você está no lugar certo.Preencha o formulário ao lado
+              para que possamos entender melhor suas necessidades e ajudá-lo a
+              encontrar o cuidador perfeito para sua família.
             </p>
             <dl className='mt-10 space-y-4 text-base leading-7 text-gray-600'>
               <div className='flex gap-x-4'>
                 <dt className='flex-none'>
-                  <span className='sr-only'>Address</span>
-                  <BuildingOffice2Icon
-                    className='h-7 w-6 text-gray-400'
-                    aria-hidden='true'
-                  />
-                </dt>
-                <dd>
-                  545 Mavis Island
-                  <br />
-                  Chicago, IL 99191
-                </dd>
-              </div>
-              <div className='flex gap-x-4'>
-                <dt className='flex-none'>
-                  <span className='sr-only'>Telephone</span>
-                  <PhoneIcon
-                    className='h-7 w-6 text-gray-400'
-                    aria-hidden='true'
-                  />
-                </dt>
-                <dd>
-                  <a
-                    className='hover:text-gray-900'
-                    href='tel:+1 (555) 234-5678'
-                  >
-                    +1 (555) 234-5678
-                  </a>
-                </dd>
-              </div>
-              <div className='flex gap-x-4'>
-                <dt className='flex-none'>
-                  <span className='sr-only'>Email</span>
+                  <span className='sr-only'>E-mail</span>
                   <EnvelopeIcon
                     className='h-7 w-6 text-gray-400'
                     aria-hidden='true'
@@ -109,9 +81,9 @@ export default function Contact() {
                 <dd>
                   <a
                     className='hover:text-gray-900'
-                    href='mailto:hello@example.com'
+                    href='mailto:contato@zeloclub.com.br'
                   >
-                    hello@example.com
+                    contato@zeloclub.com.br
                   </a>
                 </dd>
               </div>
@@ -130,7 +102,7 @@ export default function Contact() {
                   htmlFor='first-name'
                   className='block text-sm font-semibold leading-6 text-gray-900'
                 >
-                  First name
+                  Primeiro nome
                 </label>
                 <div className='mt-2.5'>
                   <input
@@ -147,7 +119,7 @@ export default function Contact() {
                   htmlFor='last-name'
                   className='block text-sm font-semibold leading-6 text-gray-900'
                 >
-                  Last name
+                  Último nome
                 </label>
                 <div className='mt-2.5'>
                   <input
@@ -164,7 +136,7 @@ export default function Contact() {
                   htmlFor='email'
                   className='block text-sm font-semibold leading-6 text-gray-900'
                 >
-                  Email
+                  E-mail
                 </label>
                 <div className='mt-2.5'>
                   <input
@@ -181,7 +153,7 @@ export default function Contact() {
                   htmlFor='phone-number'
                   className='block text-sm font-semibold leading-6 text-gray-900'
                 >
-                  Phone number
+                  Telefone
                 </label>
                 <div className='mt-2.5'>
                   <input
@@ -195,28 +167,21 @@ export default function Contact() {
               </div>
               <div className='sm:col-span-2'>
                 <label
-                  htmlFor='message'
+                  htmlFor='clientType'
                   className='block text-sm font-semibold leading-6 text-gray-900'
                 >
-                  Message
+                  Grupo de interesse
                 </label>
-                <div className='mt-2.5'>
-                  <textarea
-                    name='message'
-                    id='message'
-                    rows={4}
-                    className='block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6'
-                    defaultValue={''}
-                  />
-                </div>
+
+                <OptionGroup />
               </div>
             </div>
             <div className='mt-8 flex justify-end'>
               <button
                 type='submit'
-                className='rounded-md bg-indigo-600 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600'
+                className='rounded-md bg-[#abedd8] px-3.5 py-2.5 w-full md:w-fit text-center text-md text-gray-800 font-semibold shadow-sm transition-all hover:bg-[#97d3c0] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#abedd8] '
               >
-                Send message
+                Cadastrar
               </button>
             </div>
           </div>
