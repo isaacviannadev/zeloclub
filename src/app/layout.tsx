@@ -1,11 +1,9 @@
 import './globals.css';
-import { Inter } from 'next/font/google';
-
-const inter = Inter({ subsets: ['latin'] });
 
 export const metadata = {
-  title: 'Zeloclub',
-  description: 'Seu clube de cuidados para pessoas que amamos.',
+  title: 'Zeloclub | Conectando corações',
+  description:
+    'O zeloclub é o aplicativo perfeito para conectar cuidadores de idosos com famílias que procuram assistência confiável. Nossa plataforma intuitiva e segura facilita o encontro de cuidadores qualificados, proporcionando um envelhecimento saudável e feliz para seus entes queridos. Experimente o zeloclub hoje e descubra a tranquilidade que vem com o cuidado especializado.',
 };
 
 export default function RootLayout({
@@ -15,7 +13,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang='en'>
-      <body className={inter.className}>{children}</body>
+      <body suppressHydrationWarning={true}>{children}</body>
     </html>
   );
 }

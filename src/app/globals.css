@@ -4,7 +4,12 @@
 
 :root {
   --text-color: #2e2e2e;
+  --text-main-color: #abedd8;
   --bg-main-color: #abedd8;
+}
+
+* {
+  scroll-behavior: smooth;
 }
 
 @font-face {
@@ -18,11 +23,16 @@
   font-weight: 400;
 }
 
-body {
+.zc-bg-main {
+  background-color: var(--bg-main-color);
+}
+
+.zc-text-main-color {
+  color: var(--text-main-color);
+}
+
+.zc-text-color {
   color: var(--text-color);
-  background: var(--bg-main-color) url('../assets/patterns/pattern-bg.svg')
-    no-repeat center center fixed;
-  background-size: cover;
 }
 
 h1,
@@ -32,6 +42,8 @@ h3 {
 }
 
 p,
-span {
+span,
+a,
+button {
   font-family: Alice, sans-serif;
 }
