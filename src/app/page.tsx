@@ -1,6 +1,8 @@
 /* eslint-disable @next/next/no-img-element */
 import Contact from './components/Contact';
 import Header from './components/Header';
+import SVGHero from './components/SVGHero';
+import Button from './components/UI/Button';
 import { IconProps } from './types/types';
 
 const stats = [
@@ -161,52 +163,7 @@ export default function Home() {
       <main className='isolate'>
         {/* Hero section */}
         <div className='relative isolate -z-10'>
-          <svg
-            className='absolute inset-x-0 top-0 -z-10 h-[64rem] w-full stroke-gray-200 bg-[#ABEDD8] opacity-20'
-            aria-hidden='true'
-            width='1728'
-            height='1117'
-            viewBox='0 0 1728 1117'
-            fill='none'
-            xmlns='http://www.w3.org/2000/svg'
-          >
-            <rect
-              x='867.996'
-              y='856.414'
-              width='1891.82'
-              height='1891.82'
-              transform='rotate(45.1709 867.996 856.414)'
-              stroke='#2a2a2a43'
-              strokeWidth='2'
-            />
-            <rect
-              x='868.119'
-              y='414.414'
-              width='1891.82'
-              height='1891.82'
-              transform='rotate(45.1709 868.119 414.414)'
-              stroke='#2a2a2a43'
-              strokeWidth='2'
-            />
-            <rect
-              x='868.119'
-              y='-27.5858'
-              width='1891.82'
-              height='1891.82'
-              transform='rotate(45.1709 868.119 -27.5858)'
-              stroke='#2a2a2a43'
-              strokeWidth='2'
-            />
-            <rect
-              x='867.996'
-              y='-469.586'
-              width='1891.82'
-              height='1891.82'
-              transform='rotate(45.1709 867.996 -469.586)'
-              stroke='#2a2a2a43'
-              strokeWidth='2'
-            />
-          </svg>
+          <SVGHero />
 
           <div
             className='absolute left-1/2 right-0 top-0 -z-10 -ml-24 transform-gpu overflow-hidden blur-3xl lg:ml-24 xl:ml-48'
@@ -245,7 +202,7 @@ export default function Home() {
                     <div className='relative'>
                       <img
                         src='https://cdn.glitch.global/366c06b6-90d2-4995-9a79-d42af2d6b7c2/cuidador-de-idosos-3b-850x560.jpg?v=1685398591426'
-                        alt=''
+                        alt='Cuidador de idosos e paciente'
                         className='aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg'
                       />
                       <div className='pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-gray-900/10' />
@@ -255,7 +212,7 @@ export default function Home() {
                     <div className='relative'>
                       <img
                         src='https://images.unsplash.com/photo-1537735319956-df7db4b6a4e9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=731&q=80'
-                        alt=''
+                        alt='dois idosos sorrindo'
                         className='aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg'
                       />
                       <div className='pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-gray-900/10' />
@@ -263,7 +220,7 @@ export default function Home() {
                     <div className='relative'>
                       <img
                         src='https://images.unsplash.com/photo-1626668011660-051379e9b211?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80'
-                        alt=''
+                        alt='mãos de idosa com aliança dourada e sorrindo ao fundo'
                         className='aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg'
                       />
                       <div className='pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-gray-900/10' />
@@ -273,9 +230,7 @@ export default function Home() {
                     <div className='relative'>
                       <img
                         src='https://casaderepousomoradaprimavera.com/wp-content/uploads/2020/02/Dia-Nacional-do-Cuidador-de-Idosos-morada.jpg.webp'
-                        // src='https://cdn.folhape.com.br/img/c/800/600/dn_arquivo/2021/08/29095571713-eb20065354-b_1.jpg'
-                        // src='https://plus.unsplash.com/premium_photo-1663100381304-2d2bbef0551b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80'
-                        alt=''
+                        alt='paciente e cuidadora sorrindo'
                         className='aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg'
                       />
                       <div className='pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-gray-900/10' />
@@ -283,7 +238,7 @@ export default function Home() {
                     <div className='relative'>
                       <img
                         src='https://casaderepousoemsaopaulo.com/blog/wp-content/uploads/2021/08/profissionais-capacitados-cuidador-de-idosos.jpg'
-                        alt=''
+                        alt='cuidadora com as mão no ombro de idosa sorrindo'
                         className='aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg'
                       />
                       <div className='pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-gray-900/10' />
@@ -360,6 +315,12 @@ export default function Home() {
                       </dd>
                     </div>
                   ))}
+
+                  <div className='flex flex-col-reverse gap-y-4'>
+                    <a href='#contact'>
+                      <Button>Cadastre-se na lista de interesse</Button>
+                    </a>
+                  </div>
                 </dl>
               </div>
             </div>
@@ -369,9 +330,9 @@ export default function Home() {
         {/* Image section */}
         <div className='mt-32 sm:mt-40 xl:mx-auto xl:max-w-7xl xl:px-8 '>
           <img
-            src='https://cdn.glitch.global/366c06b6-90d2-4995-9a79-d42af2d6b7c2/af241533-8f23-4997-80f6-78ad1b0d4957.image.png?v=1685403765970'
+            src='https://cdn.glitch.global/366c06b6-90d2-4995-9a79-d42af2d6b7c2/a3be40c7-13f0-41d1-a6c9-7a85073102b6.image.png?v=1685448650023'
             alt=''
-            className='aspect-[5/2] w-full object-cover  xl:rounded-3xl'
+            className='aspect-[5/2] w-full object-cover object-top xl:rounded-3xl'
           />
         </div>
 

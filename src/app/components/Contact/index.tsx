@@ -1,13 +1,55 @@
+'use client';
 import { EnvelopeIcon } from '@heroicons/react/24/outline';
 import OptionGroup from '../OptionGroup';
+import Button from '../UI/Button';
+import { useState } from 'react';
+import { MailTypes } from '@zeloclub/app/types/apiTypes';
+import {
+  formatName,
+  phoneNumberFlatFormat,
+} from '@zeloclub/app/helpers/formatters';
+import { POST } from '@zeloclub/app/api/signup';
+import Input from '../UI/Input';
+import PhoneInput from '../PhoneInput';
 
 export default function Contact() {
+  const [_, setPayload] = useState<MailTypes>();
+  const [clientType, setClientType] = useState<MailTypes['type']>();
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    const form = e.currentTarget;
+    const data = new FormData(form);
+
+    const name = data.get('full-name') as string;
+
+    const payload: MailTypes = {
+      name: formatName(name),
+      email: data.get('email') as string,
+      type: clientType as MailTypes['type'],
+    };
+
+    const phone = data.get('phone-number') as string;
+    console.log(phone, 'phone');
+
+    if (phone) {
+      payload.phone = `+55${phoneNumberFlatFormat(phone)}`;
+    }
+
+    setPayload(payload);
+
+    const res = await POST(payload);
+
+    // form.reset();
+  };
+
   return (
     <div className='relative isolate bg-white' id='contact'>
       <div className='mx-auto grid max-w-7xl grid-cols-1 lg:grid-cols-2'>
         <div className='relative px-6 pb-20 pt-24 sm:pt-32 lg:static lg:px-8 lg:py-48'>
           <div className='mx-auto max-w-xl lg:mx-0 lg:max-w-lg'>
-            <div className='absolute inset-y-0 left-0 -z-10 w-full overflow-hidden bg-gradient-to-l from-white to-[#abedd86d]  lg:w-1/2'>
+            <div className='absolute inset-y-0 left-0 -z-10 w-full overflow-hidden bg-gradient-to-l from-white to-[#abedd86d] lg:w-1/2'>
               <svg
                 className='absolute inset-0 h-full object-cover opacity-10'
                 aria-hidden='true'
@@ -56,7 +98,7 @@ export default function Contact() {
               </svg>
             </div>
             <h2 className='text-3xl font-bold tracking-tight text-gray-900'>
-              Cadastre-se na lista de espera
+              Cadastre-se na lista de interesse
             </h2>
             <p className='mt-6 text-lg leading-6 text-gray-600'>
               Se você é um cuidador dedicado e experiente, gostaríamos de
@@ -90,43 +132,28 @@ export default function Contact() {
             </dl>
           </div>
         </div>
+
         <form
-          action='#'
+          onSubmit={(e) => handleSubmit(e)}
           method='POST'
           className='px-6 pb-24 pt-20 sm:pb-32 lg:px-8 lg:py-48'
         >
           <div className='mx-auto max-w-xl lg:mr-0 lg:max-w-lg'>
             <div className='grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2'>
-              <div>
+              <div className='sm:col-span-2'>
                 <label
-                  htmlFor='first-name'
+                  htmlFor='full-name'
                   className='block text-sm font-semibold leading-6 text-gray-900'
                 >
-                  Primeiro nome
+                  Nome completo
                 </label>
                 <div className='mt-2.5'>
                   <input
                     type='text'
-                    name='first-name'
-                    id='first-name'
+                    id='full-name'
+                    name='full-name'
                     autoComplete='given-name'
-                    className='block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6'
-                  />
-                </div>
-              </div>
-              <div>
-                <label
-                  htmlFor='last-name'
-                  className='block text-sm font-semibold leading-6 text-gray-900'
-                >
-                  Último nome
-                </label>
-                <div className='mt-2.5'>
-                  <input
-                    type='text'
-                    name='last-name'
-                    id='last-name'
-                    autoComplete='family-name'
+                    required
                     className='block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6'
                   />
                 </div>
@@ -139,12 +166,12 @@ export default function Contact() {
                   E-mail
                 </label>
                 <div className='mt-2.5'>
-                  <input
+                  <Input
                     type='email'
-                    name='email'
                     id='email'
+                    name='email'
                     autoComplete='email'
-                    className='block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6'
+                    required
                   />
                 </div>
               </div>
@@ -156,33 +183,26 @@ export default function Contact() {
                   Telefone
                 </label>
                 <div className='mt-2.5'>
-                  <input
-                    type='tel'
-                    name='phone-number'
+                  <PhoneInput
                     id='phone-number'
+                    name='phone-number'
                     autoComplete='tel'
-                    className='block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6'
                   />
                 </div>
               </div>
               <div className='sm:col-span-2'>
                 <label
-                  htmlFor='clientType'
+                  htmlFor='client-type'
                   className='block text-sm font-semibold leading-6 text-gray-900'
                 >
                   Grupo de interesse
                 </label>
 
-                <OptionGroup />
+                <OptionGroup callback={(x) => setClientType(x)} />
               </div>
             </div>
             <div className='mt-8 flex justify-end'>
-              <button
-                type='submit'
-                className='rounded-md bg-[#abedd8] px-3.5 py-2.5 w-full md:w-fit text-center text-md text-gray-800 font-semibold shadow-sm transition-all hover:bg-[#97d3c0] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#abedd8] '
-              >
-                Registrar
-              </button>
+              <Button type='submit'>Registrar</Button>
             </div>
           </div>
         </form>
