@@ -6,17 +6,13 @@ export async function GET(request: Request) {
 }
 
 export async function POST(payload: MailTypes) {
-  fetch('https://mailer.zeloclub.com.br/signup', {
+  const data = await fetch('https://mailer.zeloclub.com.br/signup', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
     },
     body: JSON.stringify(payload),
-  })
-    .then((response) => response.json())
-    .then((data) => {
-      console.log(data);
-      // return NextResponse.json(data);
-    })
-    .catch((err) => console.error(err));
+  });
+
+  return NextResponse.json(data);
 }
