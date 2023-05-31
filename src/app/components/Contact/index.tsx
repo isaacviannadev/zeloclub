@@ -16,11 +16,8 @@ import toast, { Toaster } from 'react-hot-toast';
 export default function Contact() {
   const [clientType, setClientType] = useState<MailTypes['type']>();
 
-  const [isLoading, setIsLoading] = useState(false);
-
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setIsLoading(true);
 
     const form = e.currentTarget;
     const data = new FormData(form);
@@ -48,7 +45,6 @@ export default function Contact() {
           backgroundColor: '#62e4bb',
         },
       });
-      setIsLoading(false);
       form.reset();
     } else {
       toast.error('Erro ao realizar cadastro!', {
@@ -57,7 +53,6 @@ export default function Contact() {
           backgroundColor: '#fcbeb3',
         },
       });
-      setIsLoading(false);
     }
   };
 
@@ -219,9 +214,7 @@ export default function Contact() {
                 </div>
               </div>
               <div className='mt-8 flex justify-end'>
-                <Button disabled={isLoading} type='submit'>
-                  Registrar
-                </Button>
+                <Button type='submit'>Registrar</Button>
               </div>
             </div>
           </form>
