@@ -113,7 +113,7 @@ export default function Contact() {
                   />
                 </svg>
               </div>
-              <h2 className='text-3xl font-bold tracking-tight text-gray-900'>
+              <h2 className='font-alt text-3xl font-bold tracking-tight text-gray-900'>
                 Cadastre-se na lista de interesse
               </h2>
               <p className='mt-6 text-lg leading-6 text-gray-600'>
@@ -214,7 +214,7 @@ export default function Contact() {
                 </div>
               </div>
               <div className='mt-8 flex justify-end'>
-                <Button type='submit'>Registrar</Button>
+                <Button type='submit'>Registrar para fazer parte!</Button>
               </div>
             </div>
           </form>

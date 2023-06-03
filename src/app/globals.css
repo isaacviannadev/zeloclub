@@ -2,48 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --text-color: #2e2e2e;
-  --text-main-color: #abedd8;
-  --bg-main-color: #abedd8;
-}
-
-* {
-  scroll-behavior: smooth;
-}
-
-@font-face {
-  font-family: 'Roxborough';
-  src: url('../assets/fonts/roxborough-cf-bold.ttf');
-}
-
-@font-face {
-  font-family: 'Alice';
-  src: url('../assets/fonts/Alice-Regular.ttf');
-  font-weight: 400;
-}
-
-.zc-bg-main {
-  background-color: var(--bg-main-color);
-}
-
-.zc-text-main-color {
-  color: var(--text-main-color);
-}
-
-.zc-text-color {
-  color: var(--text-color);
-}
-
-h1,
-h2,
-h3 {
-  font-family: Roxborough, sans-serif;
-}
-
-p,
-span,
-a,
-button {
-  font-family: Alice, sans-serif;
+body {
+  --webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
