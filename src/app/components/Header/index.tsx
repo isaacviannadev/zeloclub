@@ -23,7 +23,7 @@ function Header() {
         <div className='flex lg:flex-1 '>
           <a href='#' className='-m-1.5 p-1.5'>
             <span className='sr-only'>zeloclub</span>
-            <h1 className='text-4xl'>zeloclub</h1>
+            <h1 className='font-alt text-4xl'>zeloclub</h1>
           </a>
         </div>
         {/* <div className='flex lg:hidden'>

@@ -1,3 +1,4 @@
+import localFont from 'next/font/local';
 import './globals.css';
 
 export const metadata = {
@@ -6,13 +7,23 @@ export const metadata = {
     'O zeloclub é o aplicativo perfeito para conectar cuidadores de idosos com famílias que procuram assistência confiável. Nossa plataforma intuitiva e segura facilita o encontro de cuidadores qualificados, proporcionando um envelhecimento saudável e feliz para seus entes queridos. Experimente o zeloclub hoje e descubra a tranquilidade que vem com o cuidado especializado.',
 };
 
+const alice = localFont({
+  src: '../assets/fonts/Alice-Regular.ttf',
+  variable: '--font-alice',
+});
+const roxborough = localFont({
+  src: '../assets/fonts/roxborough-cf-bold.ttf',
+  weight: 'bold',
+  variable: '--font-roxborough',
+});
+
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
   return (
-    <html lang='en'>
+    <html lang='en' className='scroll-smooth'>
       <head>
         {/* <!-- Open Graph / Facebook --> */}
         <meta property='og:type' content='website' />
@@ -43,7 +54,12 @@ export default function RootLayout({
           content='https://cdn.glitch.global/366c06b6-90d2-4995-9a79-d42af2d6b7c2/zeloclub%20Registr.png?v=1685524426272'
         ></meta>
       </head>
-      <body suppressHydrationWarning={true}>{children}</body>
+      <body
+        className={`${alice.variable} ${roxborough.variable} font-sans `}
+        suppressHydrationWarning={true}
+      >
+        {children}
+      </body>
     </html>
   );
 }

@@ -4,6 +4,7 @@ import Header from './components/Header';
 import SVGHero from './components/SVGHero';
 import Button from './components/UI/Button';
 import { IconProps } from './types/types';
+import { HeartIcon, HomeIcon } from '@heroicons/react/20/solid';
 
 const stats = [
   { label: 'População idosa no Brasil', value: '31,2 milhões' },
@@ -32,6 +33,22 @@ const values = [
       'Selecionamos cuidadosamente uma equipe de profissionais altamente capacitados, comprometidos em oferecer cuidados personalizados e atenciosos aos idosos. Nossos cuidadores são treinados para lidar com diversas necessidades, proporcionando conforto e segurança em cada interação.',
   },
 ];
+
+const features = [
+  {
+    name: 'Para cuidadores',
+    description:
+      'Somo uma plataforma de conexão entre cuidadores e idosos, nosso objetivo é dar visibilidade a essa categoria e permitir mais oportunidades de trabalho. Ao se cadastrar no zeloclub, você terá acesso a uma rede de idosos e familiares em busca de profissionais qualificados e confiáveis.',
+    icon: HeartIcon,
+  },
+  {
+    name: 'Para quem precisa de cuidados',
+    description:
+      'Acreditamos que cada idoso merece receber cuidados amorosos e respeitosos, e buscamos garantir que essas necessidades sejam atendidas de forma eficiente e confiável. Ao escolher o zeloclub, você terá acesso a um clube de profissionais altamente capacitados, com experiência comprovada e um compromisso genuíno em oferecer cuidado de excelência',
+    icon: HomeIcon,
+  },
+];
+
 const team = [
   {
     name: 'Isaac Vianna',
@@ -181,21 +198,36 @@ export default function Home() {
             <div className='mx-auto max-w-7xl px-6 pb-32 pt-36 sm:pt-60 lg:px-8 lg:pt-32'>
               <div className='mx-auto max-w-2xl gap-x-14 lg:mx-0 lg:flex lg:max-w-none lg:items-center'>
                 <div className='w-full max-w-xl lg:shrink-0 xl:max-w-2xl'>
-                  <h1 className='text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl'>
+                  <h1 className='font-alt text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl'>
                     {/* We’re changing the way people connect. */}
                     Conectando corações, cuidando de vidas.
                   </h1>
                   <p className='relative mt-6 text-lg leading-8 text-gray-600 sm:max-w-md lg:max-w-none'>
-                    O <strong className='text-black'>zeloclub</strong> é o
-                    aplicativo perfeito para conectar cuidadores de idosos com
-                    famílias que procuram assistência confiável. Nossa
-                    plataforma intuitiva e segura facilita o encontro de
-                    cuidadores qualificados, proporcionando um envelhecimento
-                    saudável e feliz para seus entes queridos. Experimente o{' '}
-                    <strong className='text-black'> zeloclub</strong> hoje e
-                    descubra a tranquilidade que vem com o cuidado
-                    especializado.
+                    O <strong className='text-black'>zeloclub</strong> é a
+                    plataforma perfeita para conectar cuidadores com pessoas que
+                    precisam de cuidados para seus entes queridos. Nossa
+                    plataforma, segura e intuitva facilita o encontro de
+                    cuidadores para que eles possam auxiliar a rotina das
+                    pessoas proporcionando qualidade de vida.
+                    <br />
+                    Experimente o{' '}
+                    <strong className='text-black'>zeloclub</strong> e viva essa
+                    experiência.
                   </p>
+
+                  <div className='mt-10 flex items-center gap-x-6'>
+                    <a href='#contact'>
+                      <Button>Sou cuidador!</Button>
+                    </a>
+                    <a href='#contact'>
+                      <button
+                        type='button'
+                        className='rounded-md bg-white px-3.5 py-2.5 text-md font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50'
+                      >
+                        Preciso de um cuidador!
+                      </button>
+                    </a>
+                  </div>
                 </div>
                 <div className='mt-14 flex justify-end gap-8 sm:-mt-44 sm:justify-start sm:pl-20 lg:mt-0 lg:pl-0'>
                   <div className='ml-auto w-44 flex-none space-y-8 pt-32 sm:ml-0 sm:pt-80 lg:order-last lg:pt-36 xl:order-none xl:pt-80'>
@@ -251,84 +283,57 @@ export default function Home() {
         </div>
 
         {/* Content section */}
-        <div className='mx-auto -mt-12 max-w-7xl px-6 sm:mt-0 lg:px-8 xl:-mt-8'>
-          <div className='mx-auto max-w-2xl lg:mx-0 lg:max-w-none'>
-            <h2 className='text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl'>
-              Nossa missão
-            </h2>
-            <div className='mt-6 flex flex-col gap-x-8 gap-y-20 lg:flex-row'>
-              <div className='lg:w-full lg:max-w-2xl lg:flex-auto'>
-                <p className='text-xl leading-8 text-gray-600'>
-                  Nossa missão no{' '}
-                  <strong className='text-black'>zeloclub</strong> é ser a ponte
-                  que conecta cuidadores de idosos dedicados a famílias em busca
-                  de assistência de qualidade. Somos um serviço de
-                  intermediação, focado em facilitar o encontro entre
-                  profissionais especializados e aqueles que necessitam de
-                  cuidados personalizados para seus entes queridos.
-                </p>
-                <div className='mt-10 max-w-xl text-base leading-7 text-gray-700'>
-                  <p>
-                    Acreditamos que cada idoso merece receber cuidados amorosos
-                    e respeitosos, e buscamos garantir que essas necessidades
-                    sejam atendidas de forma eficiente e confiável. No entanto,
-                    é importante destacar que não somos prestadores diretos de
-                    cuidados aos idosos. Em vez disso, oferecemos uma plataforma
-                    intuitiva e segura que permite que famílias encontrem
-                    cuidadores qualificados que se encaixem perfeitamente em
-                    suas necessidades.
-                    <br />
-                    Ao escolher o{' '}
-                    <strong className='text-black'>zeloclub</strong>, você terá
-                    acesso a um clube de profissionais altamente capacitados,
-                    com experiência comprovada e um compromisso genuíno em
-                    oferecer cuidado de excelência.
-                  </p>
-                  <p className='mt-10'>
-                    Nossa plataforma simplifica o processo de busca, seleção e
-                    contratação de cuidadores, garantindo que você encontre a
-                    pessoa certa para cuidar do seu ente querido.
-                    <br />
-                    No <strong className='text-black'>zeloclub</strong>,
-                    acreditamos que o cuidado com os idosos vai além do simples
-                    serviço - é uma expressão de amor e dedicação.
-                    <br />
-                    Estamos comprometidos em ajudar você a encontrar cuidadores
-                    comprometidos e qualificados, para que seus entes queridos
-                    recebam o apoio necessário e desfrutem de uma vida mais
-                    feliz e saudável.
-                  </p>
-                </div>
-              </div>
-              <div className='lg:flex lg:flex-auto lg:justify-center'>
-                <dl className='w-64 space-y-8 xl:w-80'>
-                  {stats.map((stat) => (
-                    <div
-                      key={stat.label}
-                      className='flex flex-col-reverse gap-y-4'
-                    >
-                      <dt className='text-base leading-7 text-gray-600'>
-                        {stat.label}
-                      </dt>
-                      <dd className='text-5xl font-semibold tracking-tight text-gray-900'>
-                        {stat.value}
-                      </dd>
-                    </div>
-                  ))}
 
-                  <div className='flex flex-col-reverse gap-y-4'>
-                    <a href='#contact'>
-                      <Button>Cadastre-se na lista de interesse</Button>
-                    </a>
+        <div className='py-4 pb-24 sm:py-32 '>
+          <div className='mx-auto max-w-7xl px-6 lg:px-8'>
+            <div className='mx-auto max-w-2xl lg:text-center'>
+              <h2 className='font-alt text-base font-semibold leading-7 text-brand-200'>
+                zeloclub
+              </h2>
+              <p className='mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl '>
+                Nossa missão
+              </p>
+              <p className='mt-6 text-lg leading-8 text-gray-600'>
+                A nossa missão é ser a ponte que une cuidadores de idosos
+                dedicados a famílias em busca de assistência.
+              </p>
+            </div>
+            <div className='mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none'>
+              <dl className='grid max-w-xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-2'>
+                {features.map((feature) => (
+                  <div key={feature.name} className='flex flex-col'>
+                    <dt className='flex items-center gap-x-3 text-base font-semibold leading-7 text-gray-900'>
+                      <feature.icon
+                        className='h-5 w-5 flex-none text-brand-200'
+                        aria-hidden='true'
+                      />
+                      {feature.name}
+                    </dt>
+                    <dd className='mt-4 flex flex-auto flex-col text-base leading-7 text-gray-600'>
+                      <p className='flex-auto'>{feature.description}</p>
+                    </dd>
                   </div>
-                </dl>
-              </div>
+                ))}
+              </dl>
+            </div>
+            <div className='mt-10 flex items-center justify-center gap-x-6'>
+              <a href='#contact'>
+                <Button>Sou cuidador!</Button>
+              </a>
+              <a href='#contact'>
+                <button
+                  type='button'
+                  className='rounded-md bg-white px-3.5 py-2.5 text-md font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50'
+                >
+                  Preciso de um cuidador!
+                </button>
+              </a>
             </div>
           </div>
         </div>
 
         {/* Image section */}
-        <div className='mt-32 sm:mt-40 xl:mx-auto xl:max-w-7xl xl:px-8 '>
+        <div className='xl:mx-auto xl:max-w-7xl xl:px-8 '>
           <img
             src='https://cdn.glitch.global/366c06b6-90d2-4995-9a79-d42af2d6b7c2/a3be40c7-13f0-41d1-a6c9-7a85073102b6.image.png?v=1685448650023'
             alt=''
@@ -337,7 +342,7 @@ export default function Home() {
         </div>
 
         {/* Values section */}
-        <div className='mx-auto mt-32 max-w-7xl px-6 sm:mt-40 lg:px-8 relative '>
+        <div className='mx-auto my-28 max-w-7xl px-6 sm:my-32 lg:px-8 relative'>
           <div
             className='absolute right-1/2 -scale-x-[1] left-0 top-0 -z-10 -ml-24 transform-gpu overflow-hidden blur-3xl lg:ml-24 xl:ml-48'
             aria-hidden='true'
@@ -351,7 +356,7 @@ export default function Home() {
             />
           </div>
           <div className='mx-auto max-w-2xl lg:mx-0'>
-            <h2 className='text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl'>
+            <h2 className='font-alt text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl'>
               Nossos valores
             </h2>
             <p className='mt-6 text-lg leading-8 text-gray-600'>
@@ -360,7 +365,7 @@ export default function Home() {
               parceiros e colegas.
             </p>
           </div>
-          <dl className='mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 text-base leading-7 sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:grid-cols-3'>
+          <dl className='mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 text-base leading-7 sm:grid-cols-2 lg:mx-0 lg:max-w-none '>
             {values.map((value) => (
               <div key={value.name}>
                 <dt className='font-semibold text-gray-900'>{value.name}</dt>
@@ -370,126 +375,13 @@ export default function Home() {
           </dl>
         </div>
 
-        {/* Team section */}
-        <div className='mx-auto mt-32 max-w-7xl px-6 sm:mt-48 lg:px-8 mb-32 '>
-          <div className='mx-auto max-w-2xl lg:mx-0'>
-            <h2 className='text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl'>
-              Nosso time
-            </h2>
-            <p className='mt-6 text-lg leading-8 text-gray-600'>
-              Nosso time é composto por profissionais apaixonados e dedicados
-              que têm como objetivo central promover a excelência e a qualidade
-              em todos os aspectos do nosso serviço.
-            </p>
-          </div>
-          <ul
-            role='list'
-            className='mx-auto mt-20 grid max-w-2xl grid-cols-2 gap-x-8 gap-y-16 text-center sm:grid-cols-3 md:grid-cols-4 lg:mx-0 lg:max-w-none lg:grid-cols-4 xl:grid-cols-4'
-          >
-            {team.map((person) => (
-              <li key={person.name}>
-                <img
-                  className='mx-auto h-24 w-24 rounded-full border-2 border-[#ABEDD8]'
-                  src={person.imageUrl}
-                  alt=''
-                />
-                <h3 className='mt-6 text-base font-semibold leading-7 tracking-tight text-gray-900'>
-                  {person.name}
-                </h3>
-                <p className='text-sm leading-6 text-gray-600'>{person.role}</p>
-              </li>
-            ))}
-          </ul>
-        </div>
-
         {/* Contact section */}
         <Contact />
-
-        {/* Blog section */}
-        {/* <div className='mx-auto mt-32 max-w-7xl px-6 sm:mt-40 lg:px-8'>
-          <div className='mx-auto max-w-2xl lg:mx-0 lg:max-w-none'>
-            <h2 className='text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl'>
-              From the blog
-            </h2>
-            <p className='mt-2 text-lg leading-8 text-gray-600'>
-              Vel dolorem qui facilis soluta sint aspernatur totam cumque.
-            </p>
-          </div>
-          <div className='mx-auto mt-16 grid max-w-2xl auto-rows-fr grid-cols-1 gap-8 sm:mt-20 lg:mx-0 lg:max-w-none lg:grid-cols-3'>
-            {blogPosts.map((post) => (
-              <article
-                key={post.id}
-                className='relative isolate flex flex-col justify-end overflow-hidden rounded-2xl bg-gray-900 px-8 pb-8 pt-80 sm:pt-48 lg:pt-80'
-              >
-                <img
-                  src={post.imageUrl}
-                  alt=''
-                  className='absolute inset-0 -z-10 h-full w-full object-cover'
-                />
-                <div className='absolute inset-0 -z-10 bg-gradient-to-t from-gray-900 via-gray-900/40' />
-                <div className='absolute inset-0 -z-10 rounded-2xl ring-1 ring-inset ring-gray-900/10' />
-
-                <div className='flex flex-wrap items-center gap-y-1 overflow-hidden text-sm leading-6 text-gray-300'>
-                  <time dateTime={post.datetime} className='mr-8'>
-                    {post.date}
-                  </time>
-                  <div className='-ml-4 flex items-center gap-x-4'>
-                    <svg
-                      viewBox='0 0 2 2'
-                      className='-ml-0.5 h-0.5 w-0.5 flex-none fill-white/50'
-                    >
-                      <circle cx={1} cy={1} r={1} />
-                    </svg>
-                    <div className='flex gap-x-2.5'>
-                      <img
-                        src={post.author.imageUrl}
-                        alt=''
-                        className='h-6 w-6 flex-none rounded-full bg-white/10'
-                      />
-                      {post.author.name}
-                    </div>
-                  </div>
-                </div>
-                <h3 className='mt-3 text-lg font-semibold leading-6 text-white'>
-                  <a href={post.href}>
-                    <span className='absolute inset-0' />
-                    {post.title}
-                  </a>
-                </h3>
-              </article>
-            ))}
-          </div>
-        </div> */}
       </main>
 
       {/* Footer */}
       <footer className='mx-auto mt-10 max-w-7xl overflow-hidden px-6 pb-20 sm:mt-24 sm:pb-24 lg:px-8'>
-        {/* <nav
-          className='-mb-6 columns-2 sm:flex sm:justify-center sm:space-x-12'
-          aria-label='Footer'
-        >
-          {footerNavigation.main.map((item) => (
-            <div key={item.name} className='pb-6'>
-              <a
-                href={item.href}
-                className='text-sm leading-6 text-gray-600 hover:text-gray-900'
-              >
-                {item.name}
-              </a>
-            </div>
-          ))}
-        </nav> */}
         <div className=' flex justify-center space-10'>
-          {/* {footerNavigation.social.map((item) => (
-            <a
-              key={item.name}
-              href={item.href}
-              className='text-gray-400 hover:text-gray-500'
-            >
-              <span className='sr-only'>{item.name}</span>
-              <item.icon className='h-6 w-6' aria-hidden='true' />
-            </a>
-          ))} */}
           <img
             src='https://cdn.glitch.global/366c06b6-90d2-4995-9a79-d42af2d6b7c2/zc-favicon.png?v=1685107525308'
             alt='Zelo'
