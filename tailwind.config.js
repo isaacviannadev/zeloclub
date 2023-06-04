@@ -62,6 +62,9 @@ module.exports = {
         xl: '1280px',
         '2xl': '1536px',
       },
+      backgroundImage: {
+        'zc-base-pattern': "url('../assets/patterns/pattern-bg.svg')",
+      },
     },
   },
   plugins: [require('@tailwindcss/forms')],
