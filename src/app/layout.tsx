@@ -1,5 +1,6 @@
 import localFont from 'next/font/local';
 import './globals.css';
+import { Toaster } from 'react-hot-toast';
 
 export const metadata = {
   title: 'Zeloclub | Conectando corações',
@@ -58,6 +59,7 @@ export default function RootLayout({
         className={`${alice.variable} ${roxborough.variable} font-sans `}
         suppressHydrationWarning={true}
       >
+        <Toaster position='top-right' />
         {children}
       </body>
     </html>

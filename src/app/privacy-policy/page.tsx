@@ -3,7 +3,7 @@
 import React from 'react';
 import privacyPolicy from '@zeloclub/assets/docs/privacy-policy';
 import Link from 'next/link';
-import { Toaster, toast } from 'react-hot-toast';
+import { toast } from 'react-hot-toast';
 
 function PrivacyPolicy() {
   const download = () => {
@@ -17,7 +17,6 @@ function PrivacyPolicy() {
 
   return (
     <>
-      <Toaster position='top-right' />
       <div className='flex flex-col justify-center items-center h-screen bg-brand-100/50 p-5 md:p-10 '>
         <Link href='/'>
           <h1 className='font-alt text-5xl'>zeloclub</h1>
@@ -34,7 +33,7 @@ function PrivacyPolicy() {
           className='bg-brand-500 text-white px-4 py-2 rounded-lg shadow-md mt-5'
           onClick={() => {
             download();
-            toast.success('Copiado para o clipboard');
+            toast.success('Download feito com sucesso!');
           }}
         >
           Fazer download
