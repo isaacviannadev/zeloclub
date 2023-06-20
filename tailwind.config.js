@@ -49,7 +49,7 @@ module.exports = {
           900: '#174844',
         },
         gradient: {
-          brand: 'linear-gradient(180deg, #4F796C 0%, #45AA99 100%)',
+          brand: 'linear-gradient(180deg, #4F796C 0%, #45AA99 100%) ',
           light: 'linear-gradient(180deg, #FFFFFF 0%, #F7F7F7 100%)',
           dark: 'linear-gradient(180deg, #404040 0%, #343434 100%)',
           error: 'linear-gradient(180deg, #f17b7b 0%, #9f2828 100%)',
@@ -68,4 +68,4 @@ module.exports = {
     },
   },
   plugins: [require('@tailwindcss/forms')],
-};
+}

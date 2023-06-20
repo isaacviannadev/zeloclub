@@ -1,17 +1,17 @@
 'use client'
 
 import React from 'react'
-import privacyPolicy from '@zeloclub/assets/docs/privacy-policy'
+import useTerms from '@zeloclub/assets/docs/use-terms'
 import Link from 'next/link'
 import { toast } from 'react-hot-toast'
 
-function PrivacyPolicy() {
+function UseTerms() {
   const download = () => {
     const element = document.createElement('a')
-    const textNatural = removeHTMLTags(privacyPolicy)
+    const textNatural = removeHTMLTags(useTerms)
     const file = new Blob([textNatural], { type: 'text/plain' })
     element.href = URL.createObjectURL(file)
-    element.download = 'zeloclub-privacy-policy.txt'
+    element.download = 'zeloclub-terms-of-use.txt'
     document.body.appendChild(element) // Required for this to work in FireFox
     element.click()
   }
@@ -30,7 +30,7 @@ function PrivacyPolicy() {
     return htmlString.replace(regex, '')
   }
 
-  const injectedHTML = injectHTMLString(privacyPolicy)
+  const injectedHTML = injectHTMLString(useTerms)
 
   return (
     <div className="flex h-screen flex-col items-center justify-center bg-brand-100/50 p-5 md:p-10 ">
@@ -38,7 +38,7 @@ function PrivacyPolicy() {
         <h1 className="font-alt text-5xl">zeloclub</h1>
       </Link>
       <div className="flex w-full max-w-6xl  flex-col items-center pb-5 pt-5 md:flex-row md:items-baseline md:justify-between md:pt-14 ">
-        <h2 className="text-2xl ">Política de Privacidade</h2>
+        <h2 className="text-2xl ">Termos de Uso</h2>
         <h3 className="text-right">Última atualização: 6 de junho de 2023</h3>
       </div>
       <div className="max-h-full w-full max-w-6xl overflow-y-auto rounded-lg bg-white p-6 text-sm shadow-md md:text-base">
@@ -58,4 +58,4 @@ function PrivacyPolicy() {
   )
 }
 
-export default PrivacyPolicy
+export default UseTerms
