@@ -1,8 +1,8 @@
-import { MailTypes } from '../types/apiTypes';
-import { NextResponse } from 'next/server';
+import { MailTypes } from '../types/apiTypes'
+import { NextResponse } from 'next/server'
 
 export async function GET(request: Request) {
-  return new Response('Hello, Next.js!');
+  return new Response('Hello, Next.js!')
 }
 
 export async function POST(payload: MailTypes) {
@@ -12,7 +12,7 @@ export async function POST(payload: MailTypes) {
       'Content-Type': 'application/json',
     },
     body: JSON.stringify(payload),
-  });
+  })
 
-  return NextResponse.json(data);
+  return NextResponse.json(data)
 }

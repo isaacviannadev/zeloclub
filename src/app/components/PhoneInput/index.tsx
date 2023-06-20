@@ -1,36 +1,37 @@
-import React from 'react';
-import Input from '../UI/Input';
-import { phoneValidation, telMask } from '@zeloclub/app/helpers/formatters';
+import React from 'react'
+import Input from '../UI/Input'
+import { phoneValidation, telMask } from '@zeloclub/app/helpers/formatters'
 
-type PhoneInputProps = React.InputHTMLAttributes<HTMLInputElement>;
+type PhoneInputProps = React.InputHTMLAttributes<HTMLInputElement>
 
-export default function PhoneInput() {
+export default function PhoneInput({ ...props }: PhoneInputProps) {
   const handlePhone = (e: React.FormEvent<HTMLInputElement>) => {
-    const input = e.currentTarget;
-    const value = input.value;
+    const input = e.currentTarget
+    const value = input.value
 
-    if (value.length === 0 || value.length <= 10) return;
+    if (value.length === 0 || value.length <= 10) return
 
-    const isValid = phoneValidation(value);
+    const isValid = phoneValidation(value)
 
     if (isValid) {
-      input.setCustomValidity('');
+      input.setCustomValidity('')
     } else {
-      input.setCustomValidity('Telefone inválido');
+      input.setCustomValidity('Telefone inválido')
     }
 
-    input.value = telMask(value);
+    input.value = telMask(value)
 
-    input.reportValidity();
-  };
+    input.reportValidity()
+  }
 
   return (
     <Input
-      id='phone-number'
-      name='phone-number'
-      autoComplete='tel'
-      placeholder='(00) 00000-0000'
+      id="phone-number"
+      name="phone-number"
+      autoComplete="tel"
+      placeholder="(00) 00000-0000"
       onInput={handlePhone}
+      {...props}
     />
-  );
+  )
 }

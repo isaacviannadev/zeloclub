@@ -1,16 +1,16 @@
-'use client';
-import Image from 'next/image';
-import { ReactNode, useEffect } from 'react';
-import CloseIcon from './icons/x-thin.svg';
+'use client'
+import Image from 'next/image'
+import { ReactNode } from 'react'
+import CloseIcon from './icons/x-thin.svg'
 
 type ModalProps = {
-  children: ReactNode;
-  isOpen: boolean;
-  onClose: () => void;
-};
+  children: ReactNode
+  isOpen: boolean
+  onClose: () => void
+}
 
 interface KeyboardEvent {
-  key: string;
+  key: string
 }
 
 export default function Modal({
@@ -18,37 +18,37 @@ export default function Modal({
   onClose,
   children,
 }: ModalProps) {
-  if (!isOpen) return null;
+  if (!isOpen) return null
 
   const handleOverlayClick = () => {
-    if (onClose) onClose();
-  };
+    if (onClose) onClose()
+  }
 
   const handleKeyPress = (event: KeyboardEvent) => {
-    console.log(event.key, 'key');
+    console.log(event.key, 'key')
     if (event.key === 'Escape') {
-      onClose();
+      onClose()
     }
-  };
+  }
 
   return (
     <div
-      className='flex items-center justify-center fixed inset-0 p-5'
+      className="fixed inset-0 flex items-center justify-center p-5"
       onKeyDown={(e) => handleKeyPress(e)}
     >
       <div
-        className='w-screen h-screen bg-gray-500 absolute -z-[1] bg-opacity-25'
+        className="absolute -z-[1] h-screen w-screen bg-gray-500 bg-opacity-25"
         onClick={handleOverlayClick}
       />
-      <div className='flex items-center justify-center relative z-1 p-5 bg-white border border-zinc-400 w-fit min-w-full md:min-w-[42rem] h-fit rounded-lg'>
+      <div className="z-1 relative flex h-fit w-fit min-w-full items-center justify-center rounded-lg border border-zinc-400 bg-white p-5 md:min-w-[42rem]">
         <div
-          className='flex items-center justify-center absolute right-1 md:right-0 top-1 md:-top-8 w-6 h-6 text-[#2e2e2e] border border-zinc-500 rounded-full md:hover:bg-slate-300 transition-all bg-white cursor-pointer'
+          className="absolute right-1 top-1 flex h-6 w-6 cursor-pointer items-center justify-center rounded-full border border-zinc-500 bg-white text-[#2e2e2e] transition-all md:-top-8 md:right-0 md:hover:bg-slate-300"
           onClick={handleOverlayClick}
         >
-          <Image src={CloseIcon} alt='close' width={16} height={16} />
+          <Image src={CloseIcon} alt="close" width={16} height={16} />
         </div>
         {children}
       </div>
     </div>
-  );
+  )
 }
