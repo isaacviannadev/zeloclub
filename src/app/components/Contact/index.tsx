@@ -13,6 +13,7 @@ import { POST } from '@zeloclub/app/api/signup'
 import Input from '../UI/Input'
 import PhoneInput from '../PhoneInput'
 import toast from 'react-hot-toast'
+import Link from 'next/link'
 
 export default function Contact() {
   const [clientType, setClientType] = useState<MailTypes['type']>()
@@ -255,19 +256,19 @@ export default function Contact() {
                 className="ml-2 text-sm font-semibold leading-6 text-gray-900"
               >
                 Eu concordo com os{' '}
-                <a
+                <Link
                   href="/use-terms"
                   className="text-brand-600 underline hover:text-brand-500"
                 >
                   termos de uso
-                </a>{' '}
+                </Link>{' '}
                 e{' '}
-                <a
+                <Link
                   href="/privacy-policy"
                   className="text-brand-600 underline hover:text-brand-500"
                 >
                   política de privacidade
-                </a>
+                </Link>
               </label>
             </div>
             <div className="mt-8 flex justify-end">
