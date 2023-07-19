@@ -47,7 +47,7 @@ const features = [
 export default function Home() {
   return (
     <div className="bg-white ">
-      <Header />
+      <Header showAction />
 
       <main className="isolate">
         {/* Hero section */}

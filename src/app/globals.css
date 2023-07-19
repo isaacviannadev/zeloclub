@@ -6,3 +6,7 @@ body {
   --webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
+
+.zc-balance {
+  text-wrap: balance;
+}

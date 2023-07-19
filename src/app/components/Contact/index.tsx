@@ -167,12 +167,12 @@ export default function Contact() {
                   />
                 </dt>
                 <dd>
-                  <a
+                  <Link
                     className="hover:text-gray-900"
                     href="mailto:contato@zeloclub.com.br"
                   >
                     contato@zeloclub.com.br
-                  </a>
+                  </Link>
                 </dd>
               </div>
             </dl>
@@ -249,7 +249,7 @@ export default function Contact() {
                 id="terms"
                 name="terms"
                 required
-                className="text-brand-500 outline-brand-500 focus:ring-brand-500"
+                className="rounded text-brand-500 outline-brand-500 focus:ring-brand-500"
               />
               <label
                 htmlFor="terms"
