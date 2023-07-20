@@ -41,7 +41,7 @@ function Header({
   }
 
   const headerClasses = 'fixed inset-x-0 top-0 z-10 '
-  const navClasses = `mx-auto flex max-w-7xl items-center p-6 lg:px-8 ${HeaderVariant[variant]}`
+  const navClasses = `mx-auto flex max-w-7xl items-center p-3 lg:px-8 ${HeaderVariant[variant]}`
 
   const headerClassesOnScroll = scroll
     ? `${headerClasses + 'bg-white shadow-sm'}`

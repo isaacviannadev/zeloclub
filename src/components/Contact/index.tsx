@@ -3,12 +3,12 @@ import { EnvelopeIcon } from '@heroicons/react/24/outline'
 import OptionGroup from '../OptionGroup'
 import Button from '../UI/Button'
 import { FormEvent, useState } from 'react'
-import { MailTypes } from '@zeloclub/app/types/apiTypes'
+import { MailTypes } from '@zeloclub/types/apiTypes'
 import {
   formatName,
   phoneNumberFlatFormat,
   phoneValidation,
-} from '@zeloclub/app/helpers/formatters'
+} from '@zeloclub/helpers/formatters'
 import { POST } from '@zeloclub/app/api/signup'
 import Input from '../UI/Input'
 import PhoneInput from '../PhoneInput'

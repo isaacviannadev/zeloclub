@@ -1,10 +1,10 @@
 import React from 'react'
-import Header from '../components/Header'
-import Card from '../components/UI/Card'
+import Header from '../../../components/Header'
+import Card from '../../../components/UI/Card'
 import Advantages from './components/advantages'
 import Link from 'next/link'
-import Input from '../components/UI/Input'
-import Button from '../components/UI/Button'
+import Input from '../../../components/UI/Input'
+import Button from '../../../components/UI/Button'
 
 const advantages = [
   {

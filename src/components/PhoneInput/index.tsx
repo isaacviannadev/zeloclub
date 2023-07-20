@@ -1,6 +1,6 @@
 import React from 'react'
 import Input from '../UI/Input'
-import { phoneValidation, telMask } from '@zeloclub/app/helpers/formatters'
+import { phoneValidation, telMask } from '@zeloclub/helpers/formatters'
 
 type PhoneInputProps = React.InputHTMLAttributes<HTMLInputElement>
 
