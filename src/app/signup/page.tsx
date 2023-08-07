@@ -1,10 +1,11 @@
 import React from 'react'
-import Header from '../../../components/Header'
-import Card from '../../../components/UI/Card'
+import Header from '../../components/Header'
+import Card from '../../components/UI/Card'
 import Advantages from './components/advantages'
 import Link from 'next/link'
-import Input from '../../../components/UI/Input'
-import Button from '../../../components/UI/Button'
+import Input from '../../components/UI/Input'
+import Button from '../../components/UI/Button'
+import PhoneInput from '@zeloclub/components/PhoneInput'
 
 const advantages = [
   {
@@ -80,13 +81,8 @@ export default function Signup() {
               autoComplete="off"
               required
             />
-            <Input
-              label="Número de telefone"
-              type="tel"
-              placeholder="xx xxxxx-xxxx"
-              autoComplete="off"
-              required
-            />
+
+            <PhoneInput label="Telefone" required />
             <Input label="Senha" type="password" autoComplete="off" required />
 
             <div className="">

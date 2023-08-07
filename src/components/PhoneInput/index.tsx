@@ -1,37 +1,52 @@
-import React from 'react'
-import Input from '../UI/Input'
-import { phoneValidation, telMask } from '@zeloclub/helpers/formatters'
+'use client'
+import React, { useEffect, useState } from 'react'
+import {
+  PhoneInput as PhoneInputLib,
+  defaultCountries,
+  parseCountry,
+} from 'react-international-phone'
+import 'react-international-phone/style.css'
+import './styled.css'
 
-type PhoneInputProps = React.InputHTMLAttributes<HTMLInputElement>
+type PhoneInputProps = {
+  label?: string
+  callback?: (phone: any) => void
+} & React.InputHTMLAttributes<HTMLInputElement>
 
-export default function PhoneInput({ ...props }: PhoneInputProps) {
-  const handlePhone = (e: React.FormEvent<HTMLInputElement>) => {
-    const input = e.currentTarget
-    const value = input.value
+const PhoneInput = ({ label, callback, ...props }: PhoneInputProps) => {
+  const countries = defaultCountries.filter((country) => {
+    const { iso2 } = parseCountry(country)
+    return ['pt', 'br', 'us'].includes(iso2)
+  })
+  const [phone, setPhone] = useState('')
 
-    if (value.length === 0 || value.length <= 10) return
-
-    const isValid = phoneValidation(value)
-
-    if (isValid) {
-      input.setCustomValidity('')
-    } else {
-      input.setCustomValidity('Telefone inválido')
+  useEffect(() => {
+    if (callback) {
+      callback(phone)
     }
-
-    input.value = telMask(value)
-
-    input.reportValidity()
-  }
+  }, [phone])
 
   return (
-    <Input
-      id="phone-number"
-      name="phone-number"
-      autoComplete="tel"
-      placeholder="(00) 00000-0000"
-      onInput={handlePhone}
-      {...props}
-    />
+    <div>
+      {label && (
+        <label
+          htmlFor={props.name}
+          className="block text-sm font-semibold leading-6 text-gray-900"
+        >
+          {label} {props.required && <span className="text-red-500">*</span>}
+        </label>
+      )}
+      <PhoneInputLib
+        {...props}
+        className="phoneInput"
+        defaultCountry="br"
+        value={phone}
+        onChange={(phone) => setPhone(phone)}
+        defaultMask="(00) 00000-0000"
+        countries={countries}
+      />
+    </div>
   )
 }
+
+export default PhoneInput
