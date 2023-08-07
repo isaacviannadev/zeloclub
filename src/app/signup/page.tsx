@@ -41,10 +41,8 @@ export default function Signup() {
       <Header variant="logo-only" />
 
       <Card classes="overflow-hidden shadow-xl flex flex-col lg:flex-row ">
-        <div className="z-1 relative flex flex-1 flex-col items-center justify-center gap-3 overflow-hidden bg-brand-100 p-2 lg:p-8">
-          <div className="-z-1 absolute -left-7 -top-5 h-40 w-40 rotate-12 rounded-t-3xl rounded-br-[80px] bg-brand-800/20 blur-lg  " />
-          <div className="-z-1 absolute -bottom-5 -right-7 h-40 w-40 -rotate-12 rounded-t-3xl rounded-br-[80px] bg-brand-800/20 blur-lg " />
-          <h2 className="text-md zc-balance text-center font-bold text-gray-900 lg:text-xl">
+        <div className="relative z-0 flex flex-1 flex-col items-center justify-center gap-3 overflow-hidden bg-brand-100 p-2 lg:p-8">
+          <h2 className="text-md zc-balance  flex text-center font-bold text-gray-900 lg:text-xl">
             ✨ Eleve seu cuidado a um novo patamar com o Zeloclub Premium! ✨
           </h2>
 
@@ -56,6 +54,8 @@ export default function Signup() {
           </p>
 
           <Advantages advantages={advantages} />
+          <div className="absolute -bottom-20 -right-20 -z-10 h-60 w-60 -rotate-12  rounded-full  bg-brand-800/30 blur-lg" />
+          <div className="absolute -left-24 -top-20 -z-10 h-60 w-60 rotate-12 rounded-full bg-white/60 blur-lg" />
         </div>
 
         <div className="flex w-full flex-col items-center justify-center gap-2 px-4 py-8 lg:w-1/2 lg:p-6 ">
