@@ -65,6 +65,9 @@ module.exports = {
       backgroundImage: {
         'zc-base-pattern': "url('../assets/patterns/pattern-bg.svg')",
       },
+      text: {
+        'zc-balance': 'text-wrap: balance;',
+      },
     },
   },
   plugins: [require('@tailwindcss/forms')],

@@ -1,8 +1,9 @@
 /* eslint-disable @next/next/no-img-element */
-import Contact from './components/Contact'
-import Header from './components/Header'
-import SVGHero from './components/SVGHero'
-import Button from './components/UI/Button'
+import Link from 'next/link'
+import Contact from '../components/Organisms/Contact'
+import Header from '../components/Organisms/Header'
+import SVGHero from '../components/Organisms/SVGHero'
+import Button from '../components/UI/Button'
 import { HeartIcon, HomeIcon } from '@heroicons/react/20/solid'
 
 const values = [
@@ -46,7 +47,7 @@ const features = [
 export default function Home() {
   return (
     <div className="bg-white ">
-      <Header />
+      <Header showAction />
 
       <main className="isolate">
         {/* Hero section */}
@@ -87,17 +88,14 @@ export default function Home() {
                   </p>
 
                   <div className="mt-10 flex w-full flex-col items-center gap-4 gap-x-6 sm:flex-row">
-                    <a href="#contact" className="w-full sm:w-fit">
+                    <Link href="#contact" className="w-full sm:w-fit">
                       <Button>Sou cuidador!</Button>
-                    </a>
-                    <a href="#contact" className="w-full sm:w-fit">
-                      <button
-                        type="button"
-                        className="text-md h-14 w-full rounded-md bg-white px-3.5 py-2.5 font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 sm:w-fit"
-                      >
+                    </Link>
+                    <Link href="#contact" className="w-full sm:w-fit">
+                      <Button variant="secondary">
                         Preciso de um cuidador!
-                      </button>
-                    </a>
+                      </Button>
+                    </Link>
                   </div>
                 </div>
                 <div className="mt-14 flex justify-end gap-8 sm:-mt-44 sm:justify-start sm:pl-20 lg:mt-0 lg:pl-0">
@@ -188,17 +186,12 @@ export default function Home() {
               </dl>
             </div>
             <div className="mt-10 flex w-full flex-col items-center justify-center gap-4 gap-x-6 sm:flex-row">
-              <a href="#contact" className="w-full sm:w-fit">
+              <Link href="#contact" className="w-full sm:w-fit">
                 <Button>Sou cuidador!</Button>
-              </a>
-              <a href="#contact" className="w-full sm:w-fit">
-                <button
-                  type="button"
-                  className="text-md h-14 w-full rounded-md bg-white px-3.5 py-2.5 font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 sm:w-fit"
-                >
-                  Preciso de um cuidador!
-                </button>
-              </a>
+              </Link>
+              <Link href="#contact" className="w-full sm:w-fit">
+                <Button variant="secondary">Preciso de um cuidador!</Button>
+              </Link>
             </div>
           </div>
         </div>
