@@ -1,8 +1,8 @@
 /* eslint-disable @next/next/no-img-element */
 import Link from 'next/link'
-import Contact from '../components/Contact'
-import Header from '../components/Header'
-import SVGHero from '../components/SVGHero'
+import Contact from '../components/Organisms/Contact'
+import Header from '../components/Organisms/Header'
+import SVGHero from '../components/Organisms/SVGHero'
 import Button from '../components/UI/Button'
 import { HeartIcon, HomeIcon } from '@heroicons/react/20/solid'
 

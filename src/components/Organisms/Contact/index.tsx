@@ -1,7 +1,7 @@
 'use client'
 import { EnvelopeIcon } from '@heroicons/react/24/outline'
 import OptionGroup from '../OptionGroup'
-import Button from '../UI/Button'
+import Button from '../../UI/Button'
 import { FormEvent, useState } from 'react'
 import { MailTypes } from '@zeloclub/types/apiTypes'
 import {
@@ -10,7 +10,7 @@ import {
   phoneValidation,
 } from '@zeloclub/helpers/formatters'
 import { POST } from '@zeloclub/app/api/signup'
-import Input from '../UI/Input'
+import Input from '../../UI/Input'
 import PhoneInput from '../PhoneInput'
 import toast from 'react-hot-toast'
 import Link from 'next/link'

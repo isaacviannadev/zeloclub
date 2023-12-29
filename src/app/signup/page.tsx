@@ -1,11 +1,11 @@
 import React from 'react'
-import Header from '../../components/Header'
+import Header from '../../components/Organisms/Header'
 import Card from '../../components/UI/Card'
 import Advantages from './components/advantages'
 import Link from 'next/link'
 import Input from '../../components/UI/Input'
 import Button from '../../components/UI/Button'
-import PhoneInput from '@zeloclub/components/PhoneInput'
+import PhoneInput from '@zeloclub/components/Organisms/PhoneInput'
 
 const advantages = [
   {
