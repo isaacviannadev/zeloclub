@@ -1,7 +1,7 @@
 'use client'
 import { useEffect, useState } from 'react'
 import { RadioGroup } from '@headlessui/react'
-import { ClientSelectionProps, MailTypes } from '@zeloclub/app/types/apiTypes'
+import { ClientSelectionProps, MailTypes } from '@zeloclub/types/apiTypes'
 
 const clientSelection: ClientSelectionProps = [
   {

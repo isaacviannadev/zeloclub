@@ -2,7 +2,33 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  /* 10px */
+  /* font-size: 62.5%; */
+}
+
 body {
   --webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
+
+  /* 16px */
+  /* font-size: 1.6rem; */
+}
+
+.zc-balance {
+  text-wrap: balance;
+}
+
+
+
+input[type="tel"]:focus {
+  outline: none !important;
+  box-shadow: 0 0 0 0.1rem #ABEDD887 !important;
+  
+
+}
+
+::selection {
+  background: #ABEDD8; /* A cor de fundo da sua escolha */
+  /* color: #ffffff; A cor do texto da sua escolha */
 }

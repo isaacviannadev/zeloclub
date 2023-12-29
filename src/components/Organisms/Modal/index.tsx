@@ -21,20 +21,19 @@ export default function Modal({
   if (!isOpen) return null
 
   const handleOverlayClick = () => {
-    if (onClose) onClose()
+    onClose?.()
   }
 
   const handleKeyPress = (event: KeyboardEvent) => {
-    console.log(event.key, 'key')
     if (event.key === 'Escape') {
-      onClose()
+      onClose?.()
     }
   }
 
   return (
     <div
       className="fixed inset-0 flex items-center justify-center p-5"
-      onKeyDown={(e) => handleKeyPress(e)}
+      onKeyDown={handleKeyPress}
     >
       <div
         className="absolute -z-[1] h-screen w-screen bg-gray-500 bg-opacity-25"

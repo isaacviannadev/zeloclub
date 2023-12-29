@@ -1,18 +1,19 @@
 'use client'
 import { EnvelopeIcon } from '@heroicons/react/24/outline'
 import OptionGroup from '../OptionGroup'
-import Button from '../UI/Button'
+import Button from '../../UI/Button'
 import { FormEvent, useState } from 'react'
-import { MailTypes } from '@zeloclub/app/types/apiTypes'
+import { MailTypes } from '@zeloclub/types/apiTypes'
 import {
   formatName,
   phoneNumberFlatFormat,
   phoneValidation,
-} from '@zeloclub/app/helpers/formatters'
+} from '@zeloclub/helpers/formatters'
 import { POST } from '@zeloclub/app/api/signup'
-import Input from '../UI/Input'
+import Input from '../../UI/Input'
 import PhoneInput from '../PhoneInput'
 import toast from 'react-hot-toast'
+import Link from 'next/link'
 
 export default function Contact() {
   const [clientType, setClientType] = useState<MailTypes['type']>()
@@ -166,12 +167,12 @@ export default function Contact() {
                   />
                 </dt>
                 <dd>
-                  <a
+                  <Link
                     className="hover:text-gray-900"
                     href="mailto:contato@zeloclub.com.br"
                   >
                     contato@zeloclub.com.br
-                  </a>
+                  </Link>
                 </dd>
               </div>
             </dl>
@@ -248,26 +249,26 @@ export default function Contact() {
                 id="terms"
                 name="terms"
                 required
-                className="text-brand-500 outline-brand-500 focus:ring-brand-500"
+                className="rounded text-brand-500 outline-brand-500 focus:ring-brand-500"
               />
               <label
                 htmlFor="terms"
                 className="ml-2 text-sm font-semibold leading-6 text-gray-900"
               >
                 Eu concordo com os{' '}
-                <a
+                <Link
                   href="/use-terms"
                   className="text-brand-600 underline hover:text-brand-500"
                 >
                   termos de uso
-                </a>{' '}
+                </Link>{' '}
                 e{' '}
-                <a
+                <Link
                   href="/privacy-policy"
                   className="text-brand-600 underline hover:text-brand-500"
                 >
                   política de privacidade
-                </a>
+                </Link>
               </label>
             </div>
             <div className="mt-8 flex justify-end">
