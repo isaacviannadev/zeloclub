@@ -1,19 +1,19 @@
 'use client'
 import { EnvelopeIcon } from '@heroicons/react/24/outline'
-import OptionGroup from '../OptionGroup'
-import Button from '../../UI/Button'
-import { FormEvent, useState } from 'react'
-import { MailTypes } from '@zeloclub/types/apiTypes'
+import { POST } from '@zeloclub/api/signup'
 import {
   formatName,
   phoneNumberFlatFormat,
   phoneValidation,
 } from '@zeloclub/helpers/formatters'
-import { POST } from '@zeloclub/app/api/signup'
-import Input from '../../UI/Input'
-import PhoneInput from '../PhoneInput'
-import toast from 'react-hot-toast'
+import { MailTypes } from '@zeloclub/types/apiTypes'
 import Link from 'next/link'
+import { FormEvent, useState } from 'react'
+import toast from 'react-hot-toast'
+import Button from '../../UI/Button'
+import Input from '../../UI/Input'
+import OptionGroup from '../OptionGroup'
+import PhoneInput from '../PhoneInput'
 
 export default function Contact() {
   const [clientType, setClientType] = useState<MailTypes['type']>()
