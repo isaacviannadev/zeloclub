@@ -1,4 +1,4 @@
-import { MailTypes } from '../../types/apiTypes'
+import { MailTypes } from '@zeloclub/types/apiTypes'
 import { NextResponse } from 'next/server'
 
 export async function GET(request: Request) {
