@@ -1,13 +1,8 @@
 'use client'
 import Link from 'next/link'
-import { FormEvent, useState } from 'react'
+import { useState } from 'react'
 import toast from 'react-hot-toast'
 
-import {
-  formatName,
-  phoneNumberFlatFormat,
-  phoneValidation,
-} from '@zeloclub/helpers/formatters'
 
 import Button from '@zeloclub/components/UI/Button'
 import Input from '@zeloclub/components/UI/Input'
@@ -68,36 +63,10 @@ export const  Contact = () => {
 
 
 
-  const handleUpdateForm = (e: FormEvent<HTMLFormElement>) => {
-    
-    const form = e.currentTarget
-    const data = new FormData(form)
-
-    const name = data.get('full-name') as string
-    const email = data.get('email') as string
-    const phone = data.get('phone-number') as string
-    const terms = data.get('terms') as string
-
-    setPayload({
-      name: formatName(name),
-      email: data.get('email') as string,
-      type: clientType as MailTypes['type'],
-    })
-
-    if (name && email && phone && terms === 'on') {
-      const isValid: boolean = phoneValidation(phone)
-      if (isValid) {
-        setPayload({ ...payload, phone: `+55${phoneNumberFlatFormat(phone)}` })
-
-        setDisabled(false)
-      }
-    } else {
-      setDisabled(true)
-    }
-  }
 
   const onSubmit = (data: Schema) => {
     setDisabled(true)
+    console.log(data, 'data')
 
      POST(payload)
       .then((res) => {
@@ -224,7 +193,6 @@ export const  Contact = () => {
           onSubmit={handleSubmit(onSubmit)}
           method="POST"
           className="px-6 pb-24 pt-20 sm:pb-32 lg:px-8 lg:py-48"
-          onChange={handleUpdateForm}
         >
           <div className="mx-auto max-w-xl lg:mr-0 lg:max-w-lg">
             <div className="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
@@ -239,9 +207,9 @@ export const  Contact = () => {
                   <Input
                     type="text"
                     id="full-name"
-                    name="full-name"
                     autoComplete="given-name"
                     required
+                    {...register('full-name')}
                   />
                 </div>
               </div>
@@ -256,9 +224,9 @@ export const  Contact = () => {
                   <Input
                     type="email"
                     id="email"
-                    name="email"
                     autoComplete="email"
                     required
+                    {...register('email')}
                   />
                 </div>
               </div>
@@ -270,7 +238,10 @@ export const  Contact = () => {
                   Telefone
                 </label>
                 <div className="mt-2.5">
-                  <PhoneInput />
+                  <PhoneInput
+                    {...register('phone-number')}
+                    callback={(x) => setPayload({ ...payload, phone: x })}
+                  />
                 </div>
               </div>
               <div className="sm:col-span-2">
@@ -281,7 +252,9 @@ export const  Contact = () => {
                   Grupo de interesse
                 </label>
 
-                <OptionGroup callback={(x) => setClientType(x)} />
+                <OptionGroup callback={(x) => setClientType(x)}
+                  {...register('type')}
+                />
               </div>
             </div>
             <div className="mt-6">
@@ -313,7 +286,7 @@ export const  Contact = () => {
               </label>
             </div>
             <div className="mt-8 flex justify-end">
-              <Button type="submit" disabled={disabled}>
+              <Button type="submit" >
                 Registrar para fazer parte!
               </Button>
             </div>
