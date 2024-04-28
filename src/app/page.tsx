@@ -1,5 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import { HeartIcon, HomeIcon } from '@heroicons/react/20/solid'
+import Image from 'next/image'
 import Link from 'next/link'
 import Contact from '../components/Organisms/Contact'
 import Header from '../components/Organisms/Header'
@@ -101,46 +102,59 @@ export default function Home() {
                 <div className="mt-14 flex justify-end gap-8 sm:-mt-44 sm:justify-start sm:pl-20 lg:mt-0 lg:pl-0">
                   <div className="ml-auto w-44 flex-none space-y-8 pt-32 sm:ml-0 sm:pt-80 lg:order-last lg:pt-36 xl:order-none xl:pt-80">
                     <div className="relative">
-                      <img
+                      <Image
                         src="https://cdn.glitch.global/366c06b6-90d2-4995-9a79-d42af2d6b7c2/cuidador-de-idosos-3b-850x560.jpg?v=1685398591426"
                         alt="Cuidador de idosos e paciente"
                         className="aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg"
+                        width={176}
+                        height={264}
                       />
                       <div className="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-gray-900/10" />
                     </div>
                   </div>
                   <div className="mr-auto w-44 flex-none space-y-8 sm:mr-0 sm:pt-52 lg:pt-36">
                     <div className="relative">
-                      <img
-                        src="https://images.unsplash.com/photo-1537735319956-df7db4b6a4e9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=731&q=80"
-                        alt="dois idosos sorrindo"
+                      <Image
+                        src="https://cdn.glitch.global/366c06b6-90d2-4995-9a79-d42af2d6b7c2/idosos6.webp?v=1714301316876"
+                        alt="casal de idosos sorrindo"
                         className="aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg"
+                        width={176}
+                        height={264}
+
                       />
                       <div className="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-gray-900/10" />
                     </div>
                     <div className="relative">
-                      <img
-                        src="https://images.unsplash.com/photo-1626668011660-051379e9b211?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
+                      <Image
+                        src="https://cdn.glitch.global/366c06b6-90d2-4995-9a79-d42af2d6b7c2/idosos2.webp?v=1714301314896"
                         alt="mãos de idosa com aliança dourada e sorrindo ao fundo"
                         className="aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg"
+                        width={176}
+                        height={264}
                       />
                       <div className="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-gray-900/10" />
                     </div>
                   </div>
                   <div className="w-44 flex-none space-y-8 pt-32 sm:pt-0">
                     <div className="relative">
-                      <img
-                        src="https://casaderepousomoradaprimavera.com/wp-content/uploads/2020/02/Dia-Nacional-do-Cuidador-de-Idosos-morada.jpg.webp"
+                      <Image
+                        src="https://cdn.glitch.global/366c06b6-90d2-4995-9a79-d42af2d6b7c2/idosos3.webp?v=1714301315536"
                         alt="paciente e cuidadora sorrindo"
                         className="aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg"
+                        width={176}
+                        height={264}
+
                       />
                       <div className="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-gray-900/10" />
                     </div>
                     <div className="relative">
-                      <img
-                        src="https://casaderepousoemsaopaulo.com/blog/wp-content/uploads/2021/08/profissionais-capacitados-cuidador-de-idosos.jpg"
+                      <Image
+                        src="https://cdn.glitch.global/366c06b6-90d2-4995-9a79-d42af2d6b7c2/idosos1.webp?v=1714301312160"
                         alt="cuidadora com as mão no ombro de idosa sorrindo"
                         className="aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg"
+                        width={176}
+                        height={264}
+
                       />
                       <div className="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-gray-900/10" />
                     </div>
@@ -225,7 +239,7 @@ export default function Home() {
             </h2>
             <p className="mt-6 text-lg leading-8 text-gray-600">
               Nossos valores são a base de tudo o que fazemos. Eles definem a
-              forma como trabalhamos e se relacionamos com nossos clientes,
+              forma como trabalhamos e nos relacionamos com nossos clientes,
               parceiros e colegas.
             </p>
           </div>

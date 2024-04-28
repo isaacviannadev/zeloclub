@@ -1,93 +1,136 @@
 'use client'
-import {
-  EnvelopeIcon,
-  ExclamationCircleIcon,
-} from '@heroicons/react/24/outline'
-// import { POST } from '@zeloclub/api/signup'
-// import {
-//   formatName,
-//   phoneNumberFlatFormat,
-//   phoneValidation,
-// } from '@zeloclub/helpers/formatters'
-// import { MailTypes } from '@zeloclub/types/apiTypes'
 import Link from 'next/link'
-// import { FormEvent, useState } from 'react'
-// import toast from 'react-hot-toast'
+import { FormEvent, useState } from 'react'
+import toast from 'react-hot-toast'
 
-export default function Contact() {
-  // const [clientType, setClientType] = useState<MailTypes['type']>()
-  // const [disabled, setDisabled] = useState<boolean>(true)
-  // const [payload, setPayload] = useState<MailTypes>({
-  //   name: '',
-  //   email: '',
-  //   type: 'caregiver',
-  //   phone: '',
-  // })
+import {
+  formatName,
+  phoneNumberFlatFormat,
+  phoneValidation,
+} from '@zeloclub/helpers/formatters'
 
-  // const handleUpdateForm = (e: FormEvent<HTMLFormElement>) => {
-  //   const form = e.currentTarget
-  //   const data = new FormData(form)
+import Button from '@zeloclub/components/UI/Button'
+import Input from '@zeloclub/components/UI/Input'
+import OptionGroup from '../OptionGroup'
+import PhoneInput from '../PhoneInput'
 
-  //   const name = data.get('full-name') as string
-  //   const email = data.get('email') as string
-  //   const phone = data.get('phone-number') as string
-  //   const terms = data.get('terms') as string
+import {
+  EnvelopeIcon
+} from '@heroicons/react/24/outline'
 
-  //   setPayload({
-  //     name: formatName(name),
-  //     email: data.get('email') as string,
-  //     type: clientType as MailTypes['type'],
-  //   })
+import { POST } from '@zeloclub/api/signup'
 
-  //   if (name && email && phone && terms === 'on') {
-  //     const isValid: boolean = phoneValidation(phone)
-  //     if (isValid) {
-  //       setPayload({ ...payload, phone: `+55${phoneNumberFlatFormat(phone)}` })
+import { MailTypes } from '@zeloclub/types/apiTypes'
 
-  //       setDisabled(false)
-  //     }
-  //   } else {
-  //     setDisabled(true)
-  //   }
-  // }
+import { zodResolver } from "@hookform/resolvers/zod"
+import { useForm } from 'react-hook-form'
+import * as z from 'zod'
 
-  // const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
-  //   e.preventDefault()
+const registerSchema = z.object({
+  'full-name': z.string().min(3),
+  email: z.string().email(),
+  'phone-number': z.string().min(10),
+  terms: z.boolean(),
+  type: z.enum(['caregiver', 'family']),
 
-  //   setDisabled(true)
-  //   const form = e.currentTarget
+})
 
-  //   await POST(payload)
-  //     .then((res) => {
-  //       if (res.ok) {
-  //         toast.success('Cadastro realizado com sucesso!', {
-  //           position: 'bottom-right',
-  //           style: {
-  //             backgroundColor: '#62e4bb',
-  //           },
-  //         })
-  //         form.reset()
-  //       } else {
-  //         toast.error('Erro ao realizar cadastro!', {
-  //           position: 'bottom-right',
-  //           style: {
-  //             backgroundColor: '#fcbeb3',
-  //           },
-  //         })
-  //       }
-  //     })
-  //     .catch(() => {
-  //       toast.error('Erro ao realizar cadastro!', {
-  //         position: 'bottom-right',
-  //         style: {
-  //           backgroundColor: '#fcbeb3',
-  //         },
-  //       })
-  //     })
-  //     .finally(() => {
-  //       setDisabled(true)
-  //     })
-  // }
+type Schema = z.infer<typeof registerSchema>
+
+
+export const  Contact = () => {
+  const [clientType, setClientType] = useState<MailTypes['type']>()
+  const [disabled, setDisabled] = useState<boolean>(true)
+  const [payload, setPayload] = useState<MailTypes>({
+    name: '',
+    email: '',
+    type: 'caregiver',
+    phone: '',
+  })
+
+  const {
+    register,
+    formState: { errors }
+  } = useForm<Schema>(
+    {
+      defaultValues: {
+        'full-name': '',
+        email: '',
+        'phone-number': '',
+        terms: false,
+        type: 'caregiver',
+      },
+      resolver: zodResolver(registerSchema),
+    }
+  )
+
+
+
+  const handleUpdateForm = (e: FormEvent<HTMLFormElement>) => {
+    
+    const form = e.currentTarget
+    const data = new FormData(form)
+
+    const name = data.get('full-name') as string
+    const email = data.get('email') as string
+    const phone = data.get('phone-number') as string
+    const terms = data.get('terms') as string
+
+    setPayload({
+      name: formatName(name),
+      email: data.get('email') as string,
+      type: clientType as MailTypes['type'],
+    })
+
+    if (name && email && phone && terms === 'on') {
+      const isValid: boolean = phoneValidation(phone)
+      if (isValid) {
+        setPayload({ ...payload, phone: `+55${phoneNumberFlatFormat(phone)}` })
+
+        setDisabled(false)
+      }
+    } else {
+      setDisabled(true)
+    }
+  }
+
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+
+    setDisabled(true)
+    const form = e.currentTarget
+
+    await POST(payload)
+      .then((res) => {
+        if (res.ok) {
+          toast.success('Cadastro realizado com sucesso!', {
+            position: 'bottom-right',
+            style: {
+              backgroundColor: '#62e4bb',
+            },
+          })
+          form.reset()
+        } else {
+          toast.error('Erro ao realizar cadastro!', {
+            position: 'bottom-right',
+            style: {
+              backgroundColor: '#fcbeb3',
+            },
+          })
+        }
+      })
+      .catch(() => {
+        toast.error('Erro ao realizar cadastro!', {
+          position: 'bottom-right',
+          style: {
+            backgroundColor: '#fcbeb3',
+          },
+        })
+      })
+      .finally(() => {
+        setDisabled(true)
+      })
+  }
 
   return (
     <div className="relative isolate bg-white" id="contact">
@@ -178,7 +221,7 @@ export default function Contact() {
           </div>
         </div>
 
-        {/* <form
+        <form
           onSubmit={handleSubmit}
           method="POST"
           className="px-6 pb-24 pt-20 sm:pb-32 lg:px-8 lg:py-48"
@@ -276,15 +319,17 @@ export default function Contact() {
               </Button>
             </div>
           </div>
-        </form> */}
-        <div className=" m-auto mt-8 flex h-full w-full flex-col items-center justify-center">
+        </form>
+        {/* <div className=" m-auto mt-8 flex h-full w-full flex-col items-center justify-center">
           <ExclamationCircleIcon className="h-20 w-20 text-gray-400" />
           <h2 className="text-2xl font-semibold text-gray-900">Em breve</h2>
           <p className="mt-2 text-sm text-gray-500">
             Estamos trabalhando nisso. Fique ligado!
           </p>
-        </div>
+        </div> */}
       </div>
     </div>
   )
 }
+
+export default Contact

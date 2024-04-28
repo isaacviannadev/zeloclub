@@ -1,5 +1,4 @@
 'use-client'
-import React from 'react'
 import { useForm } from 'react-hook-form'
 
 type FormData = {
@@ -7,7 +6,7 @@ type FormData = {
   email: string
 }
 
-const MeuFormulario: React.FC = () => {
+const MeuFormulario = () => {
   const {
     register,
     handleSubmit,
