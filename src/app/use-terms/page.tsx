@@ -1,6 +1,5 @@
 'use client'
 
-import React from 'react'
 import useTerms from '@zeloclub/assets/docs/use-terms'
 import Link from 'next/link'
 import { toast } from 'react-hot-toast'

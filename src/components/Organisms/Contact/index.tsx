@@ -50,6 +50,8 @@ export const  Contact = () => {
 
   const {
     register,
+    handleSubmit,
+    reset,
     formState: { errors }
   } = useForm<Schema>(
     {
@@ -94,22 +96,19 @@ export const  Contact = () => {
     }
   }
 
-  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault()
-
+  const onSubmit = (data: Schema) => {
     setDisabled(true)
-    const form = e.currentTarget
 
-    await POST(payload)
+     POST(payload)
       .then((res) => {
         if (res.ok) {
+          reset()
           toast.success('Cadastro realizado com sucesso!', {
             position: 'bottom-right',
             style: {
               backgroundColor: '#62e4bb',
             },
           })
-          form.reset()
         } else {
           toast.error('Erro ao realizar cadastro!', {
             position: 'bottom-right',
@@ -222,7 +221,7 @@ export const  Contact = () => {
         </div>
 
         <form
-          onSubmit={handleSubmit}
+          onSubmit={handleSubmit(onSubmit)}
           method="POST"
           className="px-6 pb-24 pt-20 sm:pb-32 lg:px-8 lg:py-48"
           onChange={handleUpdateForm}
