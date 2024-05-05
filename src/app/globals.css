@@ -23,7 +23,7 @@ input[type='tel']:focus {
 }
 
 .react-tel-input input.form-control {
-  @apply p-2 w-full text-sm font-sans pl-14 h-10 rounded-md border-gray-200 focus:border-brand-300 focus:ring focus:ring-brand-200 focus:ring-opacity-50;
+  @apply p-2 w-full text-sm font-sans pl-14 h-10 rounded-md border-gray-200 focus:border-brand-300 focus:ring focus:ring-brand-200 focus:ring-opacity-50 hover:border-brand-300;
 }
 
 .react-tel-input.error input.form-control {

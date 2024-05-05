@@ -9,7 +9,6 @@ import * as yup from 'yup';
 import { Checkbox } from '../../../../@/components/ui/checkbox';
 import { Input } from '../../../../@/components/ui/input';
 import { Label } from '../../../../@/components/ui/label';
-import { cn } from '../../../../@/lib/utils';
 
 const registerSchema = yup.object({
   fullName: yup
@@ -56,11 +55,11 @@ const RegisterForm = () => {
               <Input
                 type='text'
                 id='fullName'
-                className={cn(
+                className={
                   errors['fullName']?.message
                     ? 'border-red-400  focus:border-red-400  focus:ring-red-400'
                     : ''
-                )}
+                }
                 {...register('fullName')}
               />
               {errors['fullName']?.message && (
@@ -80,11 +79,11 @@ const RegisterForm = () => {
                 type='email'
                 id='email'
                 autoComplete='email'
-                className={cn(
-                  errors['fullName']?.message
+                className={
+                  errors['email']?.message
                     ? 'border-red-400  focus:border-red-400  focus:ring-red-400'
                     : ''
-                )}
+                }
                 {...register('email')}
               />
               {errors['email']?.message && (
