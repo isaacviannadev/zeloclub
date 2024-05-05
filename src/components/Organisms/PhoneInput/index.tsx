@@ -1,52 +1,49 @@
-'use client'
-import React, { useEffect, useState } from 'react'
-import {
-  PhoneInput as PhoneInputLib,
-  defaultCountries,
-  parseCountry,
-} from 'react-international-phone'
-import 'react-international-phone/style.css'
-import './styled.css'
+import ErrorMessage from '@zeloclub/components/UI/ErroMessage';
+import { forwardRef } from 'react';
+import PhoneInput from 'react-phone-input-2';
+import 'react-phone-input-2/lib/material.css';
+import { cn } from '../../../../@/lib/utils';
 
-type PhoneInputProps = {
-  label?: string
-  callback?: (phone: any) => void
-} & React.InputHTMLAttributes<HTMLInputElement>
+export type PhoneInputProps = {
+  name: string;
+  label?: string;
+  country?: string;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  error?: { [key: string]: any };
+} & React.ComponentProps<typeof PhoneInput> &
+  React.InputHTMLAttributes<HTMLInputElement>;
 
-const PhoneInput = ({ label, callback, ...props }: PhoneInputProps) => {
-  const countries = defaultCountries.filter((country) => {
-    const { iso2 } = parseCountry(country)
-    return ['pt', 'br', 'us'].includes(iso2)
-  })
-  const [phone, setPhone] = useState('')
+export const PhoneInputField = forwardRef<HTMLInputElement, PhoneInputProps>(
+  (
+    {
+      label = 'Telefone',
+      name,
+      country = 'br',
+      error = {},
+      inputProps,
+      ...phoneInputLibProps
+    },
+    ref
+  ) => {
+    return (
+      <div className='w-full mb-2'>
+        <PhoneInput
+          specialLabel={''}
+          country={country}
+          className={cn(error[name as string]?.message ? 'error' : '')}
+          {...phoneInputLibProps}
+          inputProps={{
+            name,
+            ref: { ref },
+            ...inputProps,
+          }}
+        />
+        {error[name as string]?.message && (
+          <ErrorMessage message={error[name as string]?.message} />
+        )}
+      </div>
+    );
+  }
+);
 
-  useEffect(() => {
-    if (callback) {
-      callback(phone)
-    }
-  }, [phone])
-
-  return (
-    <div>
-      {label && (
-        <label
-          htmlFor={props.name}
-          className="block text-sm font-semibold leading-6 text-gray-900"
-        >
-          {label} {props.required && <span className="text-red-500">*</span>}
-        </label>
-      )}
-      <PhoneInputLib
-        {...props}
-        className="phoneInput"
-        defaultCountry="br"
-        value={phone}
-        onChange={(phone) => setPhone(phone)}
-        defaultMask="(00) 00000-0000"
-        countries={countries}
-      />
-    </div>
-  )
-}
-
-export default PhoneInput
+export default PhoneInputField;

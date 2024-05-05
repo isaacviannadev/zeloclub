@@ -1,34 +1,39 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-html {
-  /* 10px */
-  /* font-size: 62.5%; */
-}
-
 body {
   --webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
-
-  /* 16px */
-  /* font-size: 1.6rem; */
 }
 
 .zc-balance {
   text-wrap: balance;
 }
+input {
+  outline: none;
+}
 
-
-
-input[type="tel"]:focus {
+input[type='tel']:focus {
   outline: none !important;
-  box-shadow: 0 0 0 0.1rem #ABEDD887 !important;
-  
-
+  box-shadow: 0 0 0 0.1rem #abedd887 !important;
 }
 
 ::selection {
-  background: #ABEDD8; /* A cor de fundo da sua escolha */
-  /* color: #ffffff; A cor do texto da sua escolha */
+  background: #abedd8;
+}
+
+.react-tel-input input.form-control {
+  @apply p-2 w-full text-sm font-sans pl-14 h-10 rounded-md border-gray-200 focus:border-brand-300 focus:ring focus:ring-brand-200 focus:ring-opacity-50;
+}
+
+.react-tel-input.error input.form-control {
+  @apply border-red-400  focus:border-red-400 focus:ring-red-400;
+}
+
+.react-tel-input div.special-label {
+  @apply text-sm font-sans text-gray-900 font-semibold left-4 -top-3;
+}
+
+.react-tel-input .flag-dropdown {
+  @apply p-10;
 }
